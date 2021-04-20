@@ -1,0 +1,1 @@
+All copyright reserved to [Web Dev Dimplified](https://www.youtube.com/watch?v=_isJ_SpN7T0&ab_channel=WebDevSimplified)
