@@ -2,6 +2,20 @@
   box-sizing: border-box;
 }
 
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #DFDFDF;
+}
+
+button {
+  border: 0px;
+  padding: 0px;
+}
+
 .btn {
   position: relative;
   height: 150px;
