@@ -1,0 +1,35 @@
+button {
+  border: 0px;
+  padding: 0px;
+}
+
+.btn {
+  position: relative;
+  height: 150px;
+  width: 450px;
+
+}
+
+.deck {
+  transform: rotate(90deg);
+}
+
+.bg-deck-front-pink {
+    width: 129px; height: 466px;
+    background: url('../images/sk8-sprite.png') -10px -10px;
+}
+
+.bg-deck-back {
+    width: 129px; height: 466px;
+    background: url('../images/sk8-sprite.png') -159px -10px;
+}
+
+.bg-deck-front-black {
+    width: 129px; height: 466px;
+    background: url('../images/sk8-sprite.png') -308px -10px;
+}
+
+.bg-deck-front-blue {
+    width: 129px; height: 466px;
+    background: url('../images/sk8-sprite.png') -457px -10px;
+}
