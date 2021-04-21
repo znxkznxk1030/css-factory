@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #DFDFDF;
+}
+
+button {
+  border: 0px;
+  padding: 0px;
+  background-color:transparent;
+}
+
+.btn {
+  position: relative;
+  height: 39px;
+  width: 140px;
+  transform-style: preserve-3d;
+  transition: transform 150ms ease-in-out;
+  background-color:transparent;
+}
+
+.btn:hover {
+  transform: rotateX(-180deg); 
+}
+
+.btn:active {
+  transform: rotateZ(180deg);
+}
+
+.deck {
+  position: absolute;
+  width:100%;
+  height:100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4em;
+  font-weight: bold;
+}
+
+.deck-front {
+  transform: translateZ(5px);
+}
+
+.deck-back {
+  transform: rotateX(180deg) translateZ(5px);
+}
+
+.bg-black-deck-rear {
+    width: 140px; height: 39px;
+    background: url('../images/decks-sprite-medium.png') -10px -10px;
+}
+
+
+.bg-blue-deck-rear {
+    width: 140px; height: 39px;
+    background: url('../images/decks-sprite-medium.png') -10px -69px;
+}
+
+
+.bg-deck-fore {
+    width: 140px; height: 39px;
+    background: url('../images/decks-sprite-medium.png') -170px -69px;
+}
+
+
+.bg-pink-deck-rear {
+    width: 140px; height: 39px;
+    background: url('../images/decks-sprite-medium.png') -170px -10px;
+}

@@ -1,17 +1,9 @@
-button {
-  border: 0px;
-  padding: 0px;
-}
-
-.btn {
-  position: relative;
-  height: 150px;
-  width: 450px;
-
-}
-
-.deck {
-  transform: rotate(90deg);
+.deck-collection {
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #DFDFDF;
 }
 
 .bg-deck-front-pink {
@@ -32,4 +24,27 @@ button {
 .bg-deck-front-blue {
     width: 129px; height: 466px;
     background: url('../images/sk8-sprite.png') -457px -10px;
+}
+
+.bg-black-deck-rear {
+    width: 140px; height: 39px;
+    background: url('../images/decks-sprite-medium.png') -10px -10px;
+}
+
+
+.bg-blue-deck-rear {
+    width: 140px; height: 39px;
+    background: url('../images/decks-sprite-medium.png') -10px -69px;
+}
+
+
+.bg-deck-fore {
+    width: 138px; height: 37px;
+    background: url('../images/decks-sprite-medium.png') -170px -69px;
+}
+
+
+.bg-pink-deck-rear {
+    width: 140px; height: 39px;
+    background: url('../images/decks-sprite-medium.png') -170px -10px;
 }
