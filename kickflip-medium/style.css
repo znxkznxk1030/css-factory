@@ -42,8 +42,15 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 4em;
+  font-size: 1em;
   font-weight: bold;
+
+  user-zoom: none; 
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 .deck-front {
