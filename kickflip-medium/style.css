@@ -22,12 +22,12 @@ button {
   height: 39px;
   width: 140px;
   transform-style: preserve-3d;
-  transition: transform 150ms ease-in-out;
+  transition: transform 300ms ease-in-out;
   background-color:transparent;
 }
 
 .btn:hover {
-  transform: rotateX(-180deg); 
+  transform: rotateX(-360deg); 
 }
 
 .btn:active {
