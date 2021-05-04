@@ -2,10 +2,6 @@
   --clr-neutral-900: hsl(207, 19%, 9%);
   --clr-neutral-100: hsl(0, 0%, 100%);
   --clr-neutral-400: hsl(142, 90%, 61%);
-
-  --clr-gradient-0: hsl(0 0% 0% / 0);
-  --clr-gradient-30: hsl(20 0% 0% / .3);
-  --clr-gradient-100: hsl(0 0% 0% / 1);
 }
 
 *,
@@ -32,10 +28,21 @@ body {
 }
 
 .card-content {
-  padding: 1.5em;
-  background: linear-gradient(
-    var(--clr-gradient-0),
-    var(--clr-gradient-30) 20%,
-    var(--clr-gradient-100),
-  );
+  --padding: 1.5rem;
+  padding: var(--padding);
+}
+
+.card-title {
+  position: relative;
+  width: max-content;
+}
+
+.card-title::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--padding) * -1);
+  bottom: 0;
+  height: 3px;
+  width: calc(100% + var(--padding));
+  background: var(--clr-neutral-400);
 }
