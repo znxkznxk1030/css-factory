@@ -2,6 +2,10 @@
   --clr-neutral-900: hsl(207, 19%, 9%);
   --clr-neutral-100: hsl(0, 0%, 100%);
   --clr-neutral-400: hsl(142, 90%, 61%);
+
+  --clr-gradient-0: hsl(0 0% 0% / 0);
+  --clr-gradient-30: hsl(20 0% 0% / .3);
+  --clr-gradient-100: hsl(0 0% 0% / 1);
 }
 
 *,
@@ -25,4 +29,13 @@ body {
   background-size: cover;
   padding: 10rem 0 0;
   max-width: 35ch;
+}
+
+.card-content {
+  padding: 1.5em;
+  background: linear-gradient(
+    var(--clr-gradient-0),
+    var(--clr-gradient-30) 20%,
+    var(--clr-gradient-100),
+  );
 }
