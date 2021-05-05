@@ -15,7 +15,8 @@ body {
   min-width: 100vh;
   place-items: center;
   line-height: 1.6;
-  background: var(--clr-neutral-900);
+  /* background: var(--clr-neutral-900); */
+  /* font: 1em sans-serif; */
   font-family: sans-serif;
 }
 
@@ -23,8 +24,16 @@ body {
   color: var(--clr-neutral-100);
   background-image: url(img/two-tree.jpeg);
   background-size: cover;
+  border-radius: 0.5rem;
   padding: 10rem 0 0;
   max-width: 35ch;
+  overflow: hidden;
+
+  transition: transform 500ms ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
 }
 
 .card-content {
@@ -45,6 +54,10 @@ body {
   height: 3px;
   width: calc(100% + var(--padding));
   background: var(--clr-neutral-400);
+}
+
+.card-body {
+  color: rgb(255 255 255 / 0.8);
 }
 
 .button {
