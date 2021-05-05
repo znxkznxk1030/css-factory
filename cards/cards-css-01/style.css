@@ -46,3 +46,18 @@ body {
   width: calc(100% + var(--padding));
   background: var(--clr-neutral-400);
 }
+
+.button {
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  color: var(--clr-neutral-900);
+  background-color: var(--clr-neutral-400);
+  padding: 0.5em 1.25em;
+}
+
+.button:hover,
+.button:focus {
+  color:var(--clr-neutral-900);
+  background-color:var(--clr-neutral-100);
+}
