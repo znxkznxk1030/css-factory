@@ -28,7 +28,6 @@ body {
   padding: 10rem 0 0;
   max-width: 35ch;
   overflow: hidden;
-
   transition: transform 500ms ease;
 }
 
@@ -39,6 +38,11 @@ body {
 .card-content {
   --padding: 1.5rem;
   padding: var(--padding);
+  
+}
+
+.card:hover .card-title::after {
+  transform: scaleX(1);
 }
 
 .card-title {
@@ -54,6 +58,9 @@ body {
   height: 3px;
   width: calc(100% + var(--padding));
   background: var(--clr-neutral-400);
+  transform: scaleX(0);
+  transition: transform 500ms ease;
+  transform-origin: left;
 }
 
 .card-body {
