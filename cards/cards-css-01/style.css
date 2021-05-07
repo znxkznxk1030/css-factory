@@ -38,11 +38,25 @@ body {
 .card-content {
   --padding: 1.5rem;
   padding: var(--padding);
-  
+  transform: translateY(65%);
+  transition: transform 500ms ease;
+}
+
+.card-content > *:not(.card-title) {
+  opacity: 0;
+  transition: opacity 500ms linear;
+}
+
+.card:hover .card-content > * {
+  opacity: 1;
 }
 
 .card:hover .card-title::after {
   transform: scaleX(1);
+}
+
+.card:hover .card-content {
+  transform: translateY(0);
 }
 
 .card-title {
@@ -54,13 +68,13 @@ body {
   content: "";
   position: absolute;
   left: calc(var(--padding) * -1);
-  bottom: 0;
+  bottom: -2px;
   height: 3px;
   width: calc(100% + var(--padding));
   background: var(--clr-neutral-400);
   transform: scaleX(0);
-  transition: transform 500ms ease;
   transform-origin: left;
+  transition: transform 500ms ease;
 }
 
 .card-body {
