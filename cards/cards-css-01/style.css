@@ -42,22 +42,25 @@ body {
   transition: transform 500ms ease;
 }
 
+.card:hover .card-content {
+  transform: translateY(0);
+  transition-delay: 500ms;
+}
+
 .card-content > *:not(.card-title) {
   opacity: 0;
   transition: opacity 500ms linear;
 }
 
-.card:hover .card-content > * {
+.card:hover .card-content > *:not(.card-title) {
   opacity: 1;
+  transition-delay: 1000ms;
 }
 
 .card:hover .card-title::after {
   transform: scaleX(1);
 }
 
-.card:hover .card-content {
-  transform: translateY(0);
-}
 
 .card-title {
   position: relative;
