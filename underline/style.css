@@ -1,0 +1,37 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  font-family: sans-serif;
+}
+
+.content {
+  --padding: 1.5rem;
+  font-size: 2em;
+  position: relative;
+  cursor: pointer;
+}
+
+.wrapper:hover .content::after {
+  transform: scaleX(1);
+}
+
+.wrapper:active .content::after {
+  transform: scaleX(1);
+}
+
+.content::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--padding) * -1);
+  bottom: -2px;
+  height: 3px;
+  width: calc(100% + var(--padding));
+  background: red;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 500ms ease;
+}
