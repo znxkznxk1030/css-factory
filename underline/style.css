@@ -23,9 +23,6 @@ body {
   height: 3px;
   width: calc(100% + var(--padding));
   background: red;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 500ms ease;
 }
 
 @media (hover) {
