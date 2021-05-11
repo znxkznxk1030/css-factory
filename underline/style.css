@@ -15,14 +15,6 @@ body {
   cursor: pointer;
 }
 
-.wrapper:hover .content::after {
-  transform: scaleX(1);
-}
-
-.wrapper:active .content::after {
-  transform: scaleX(1);
-}
-
 .content::after {
   content: "";
   position: absolute;
@@ -34,4 +26,20 @@ body {
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 500ms ease;
+}
+
+@media (hover) {
+  .wrapper:hover .content::after {
+    transform: scaleX(1);
+  }
+
+  .wrapper:active .content::after {
+    transform: scaleX(1);
+  }
+
+  .content::after {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 500ms ease;
+  }
 }
