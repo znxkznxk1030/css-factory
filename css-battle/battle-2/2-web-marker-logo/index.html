@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Leafy Trail</title>
+    <style>
+      html {
+        height: 100%;
+        width: 100%;
+      }
+
+      body {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        background: #f2f2b6;
+      }
+      .reverse-triangle {
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        top: 77px;
+        left: 73px;
+        border-top: 130px solid #fd4602;
+        border-left: 74px solid transparent;
+        border-right: 74px solid transparent;
+      }
+
+      .reverse-triangle-shadow {
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        bottom: 0px;
+        left: -94px;
+        border-top: 130px solid #ff6d00;
+        border-left: 74px solid transparent;
+        border-right: 74px solid transparent;
+      }
+
+      .triangle {
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        bottom: 0px;
+        left: 56px;
+        border-bottom: 130px solid #ff6d00;
+        border-left: 74px solid transparent;
+        border-right: 74px solid transparent;
+      }
+
+      .triangle-shadow {
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        top: 0px;
+        left: -95px;
+        border-bottom: 130px solid #fd4602;
+        border-left: 74px solid transparent;
+        border-right: 74px solid transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reverse-triangle" />
+    <div class="reverse-triangle-shadow" />
+    <div class="triangle" />
+    <div class="triangle-shadow" />
+  </body>
+</html>
