@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Overlap</title>
+    <style>
+      html, body {
+        height: 100%;
+        width: 100%;
+      }
+      
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #09042a;
+      }
+      .overlap {
+        position: relative;
+        width: 270px;
+        height: 150px;
+      }
+
+      .overlap > div {
+        width: 150px;
+        height: 150px;
+        border-radius: 100%;
+      }
+
+      .left-circle {
+        left: 10px;
+        position: absolute;
+        background: #7b3f61;
+      }
+
+      .right-circle {
+        right: 10px;
+        position: absolute;
+        background: #e78481;
+        overflow: hidden;
+      }
+
+      .inner-circle {
+        width: 150px;
+        height: 150px;
+        border-radius: 100%;
+        right: 100px;
+        position: absolute;
+        background: #09042a;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="overlap">
+      <div class="left-circle"></div>
+      <div class="right-circle">
+        <div class="inner-circle"></div>
+      </div>
+    </div>
+  </body>
+</html>
