@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Eye Of The Tiger</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #0b2429;
+      }
+
+      .outter-circle {
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+        background: #998235;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      .inner-circle-1 {
+        width: 180px;
+        height: 180px;
+        border-radius: 100%;
+        background: #0b2429;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .outter-circle::before {
+        content: '';
+        position: absolute;
+        width: 0px;
+        height: 0px;
+        border-right: 82px solid #998235;
+        border-bottom: 82px solid #0b2429;
+        border-top: 82px solid #0b2429;
+        left: -40px;
+        background: #f3ac3c;
+        z-index: -1;
+      }
+
+      .outter-circle::after {
+        content: '';
+        position: absolute;
+        width: 0px;
+        height: 0px;
+        border-left: 82px solid #998235;
+        border-bottom: 82px solid #0b2429;
+        border-top: 82px solid #0b2429;
+        right: -40px;
+        background: #998235;
+        z-index: -1;
+      }
+
+      .inner-circle-2 {
+        width: 140px;
+        height: 140px;
+        border-radius: 100%;
+        background: #f3ac3c;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .inner-circle-3 {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        background: #0b2429;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outter-circle">
+      <div class="inner-circle-1">
+        <div class="inner-circle-2">
+          <div class="inner-circle-3"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
