@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fidget Spinner</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+
+      body {
+        background: #09042a;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .fidget-spinner {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 186.5px;
+        width: 200px;
+      }
+
+      .outter-circle {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .upper-circle {
+        top: 0;
+        background: #09042a;
+      }
+
+      .bottom-circle {
+        bottom: 0;
+        background: #09042a;
+      }
+
+      .left-circle {
+        left: 0;
+        background: #e78481;
+      }
+
+      .right-circle {
+        right: 0;
+        background: #e78481;
+      }
+
+      .inner-circle {
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+        background: #09042a;
+      }
+
+      .apricot-color {
+        background: #f5bb9c;
+      }
+
+      .pink-color {
+        background: #e78481;
+      }
+
+      .inner-square {
+        width: 70px;
+        height: 60px;
+        background: #e78481;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="fidget-spinner">
+      <div class="inner-square"></div>
+      <div class="upper-circle outter-circle">
+        <div class="inner-circle apricot-color"></div>
+      </div>
+      <div class="bottom-circle outter-circle">
+        <div class="inner-circle apricot-color"></div>
+      </div>
+      <div class="left-circle outter-circle">
+        <div class="inner-circle"></div>
+      </div>
+      <div class="right-circle outter-circle">
+        <div class="inner-circle"></div>
+      </div>
+    </div>
+  </body>
+</html>
