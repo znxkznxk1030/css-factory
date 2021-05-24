@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cube</title>
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      body {
+        background: #0b2429;
+        position: relative;
+        margin: 0;
+      }
+
+      .square-1 {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: #f3ac3c;
+        transform: rotate(45deg);
+        top: 135px;
+        left: 150px;
+      }
+
+      .square-2 {
+        position: absolute;
+        width: 71px;
+        height: 70px;
+        background: #1a4341;
+        transform: skewY(45deg);
+        top: 80px;
+        left: 200px;
+      }
+
+      .square-3 {
+        position: absolute;
+        width: 71px;
+        height: 70px;
+        background: #998235;
+        transform: skewY(-45deg);
+        top: 80px;
+        left: 130px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="square-1"></div>
+    <div class="square-2"></div>
+    <div class="square-3"></div>
+  </body>
+</html>
