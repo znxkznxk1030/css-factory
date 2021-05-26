@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ticket</title>
+    <style>
+      body {
+        background: #191919;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .notes {
+        position: relative;
+        width: 300px;
+        height: 200px;
+        background: #191919;
+      }
+
+      .double-note {
+        position: absolute;
+        top: 40px;
+        left: 45px;
+        width: 60px;
+        height: 87px;
+        border-top: 10px solid #fe5f55;
+        border-right: 10px solid #fe5f55;
+        border-left: 10px solid #fe5f55;
+        background: #191919;
+      }
+
+      .single-note-1 {
+        position: absolute;
+        top: 40px;
+        left: 185px;
+        width: 30px;
+        height: 87px;
+        border-top: 10px solid #a64942;
+        border-left: 10px solid #a64942;
+        background: #191919;
+      }
+
+      .single-note-1 > div {
+        background: #a64942;
+      }
+
+      .single-note-2 {
+        position: absolute;
+        top: 40px;
+        left: 255px;
+        width: 30px;
+        height: 87px;
+        border-top: 10px solid #fe5f55;
+        border-left: 10px solid #fe5f55;
+        background: #191919;
+      }
+
+      .circle-in-note {
+        width: 50px;
+        height: 40px;
+        background: #fe5f55;
+        border-radius: 100%;
+        position: absolute;
+        bottom: -23px;
+      }
+
+      .circle-1 {
+        left: -50px;
+      }
+
+      .circle-2 {
+        right: -10px;
+      }
+
+      .wing {
+        width: 30px;
+        height: 10px;
+        background: #fe5f55;
+        position: absolute;
+        top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="notes">
+      <div class="double-note">
+        <div class="circle-in-note circle-1"></div>
+        <div class="circle-in-note circle-2"></div>
+      </div>
+      <div class="single-note-1">
+        <div class="circle-in-note circle-1"></div>
+      </div>
+      <div class="single-note-2">
+        <div class="wing"></div>
+        <div class="circle-in-note circle-1"></div>
+      </div>
+    </div>
+  </body>
+</html>
