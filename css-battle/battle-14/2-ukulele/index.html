@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ukulele</title>
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+
+      body {
+        background: #f3ac3c;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .ukulele {
+        width: 320px;
+        height: 200px;
+        position: relative;
+      }
+
+      .ukulele > * {
+        position: absolute;
+      }
+
+      .body-circle-1 {
+        background: #998235;
+        width: 120px;
+        height: 120px;
+        border-radius: 100%;
+        top: 40px;
+        left: 4px;
+      }
+
+      .bridge-1 {
+        background: #1a4341;
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        margin-top: 40px;
+        margin-left: 42px;
+      }
+
+      .bridge-2 {
+        background: #1a4341;
+        width: 10px;
+        height: 30px;
+        margin-top: -5px;
+        margin-left: 42px;
+      }
+
+      .bridge-3 {
+        background: #1a4341;
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        margin-top: -5px;
+        margin-left: 42px;
+      }
+
+      .body-circle-2 {
+        background: #998235;
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        top: 50px;
+        left: 75px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hole {
+        background: #1a4341;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        border: 5px solid #f3ac3c;
+      }
+
+      .neck {
+        width: 150px;
+        height: 20px;
+        background: #1a4341;
+        top: 90px;
+        left: 150px;
+      }
+
+      .head {
+        width: 40px;
+        height: 30px;
+        background: #998235;
+        top: 85px;
+        left: 275px;
+        border-radius: 25%;
+      }
+      .line {
+        background: #1a4341;
+        width: 20px;
+        height: 4px;
+        border-radius: 25%;
+      }
+
+      .line-1 {
+        margin-top: 8px;
+        margin-left: 10px;
+      }
+
+      .line-2 {
+        margin-top: 6px;
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ukulele">
+      <div class="neck"></div>
+      <div class="body-circle-1">
+        <div class="bridge-1"></div>
+        <div class="bridge-2"></div>
+        <div class="bridge-3"></div>
+      </div>
+      <div class="body-circle-2">
+        <div class="hole"></div>
+      </div>
+      <div class="head">
+        <div class="line line-1"></div>
+        <div class="line line-2"></div>
+      </div>
+    </div>
+  </body>
+</html>
