@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tembourine</title>
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+
+      body {
+        width: 360px;
+        height: 300px;
+        background: #6592cf;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      .tambourine {
+        background: #6592cf;
+        width: 150px;
+        height: 150px;
+        border-radius: 100%;
+        border: 10px solid #243d83;
+        margin-top: 20px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .ring {
+        position: absolute;
+        border-radius: 100%;
+        background: #6592cf;
+        border: 10px solid #243d83;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .ring::after {
+        content: '';
+        border-radius: 100%;
+        background: #6592cf;
+        border: 5px solid #243d83;
+      }
+
+      .ring-1 {
+        top: 55px;
+      }
+
+      .ring-2 {
+        top: 95px;
+        left: 105px;
+      }
+
+      .ring-3 {
+        top: 95px;
+        right: 105px;
+      }
+
+      .ring-4 {
+        bottom: 85px;
+        left: 105px;
+      }
+
+      .ring-5 {
+        bottom: 85px;
+        right: 105px;
+      }
+
+      .tambourine::after {
+        content: '';
+        border-radius: 100%;
+        background: #6592cf;
+        border: 10px solid #243d83;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        bottom: -85px;
+        left: 15px;
+      }
+
+      .bite {
+        border-radius: 100%;
+        background: #6592cf;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        bottom: -10px;
+        left: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tambourine"></div>
+    <div class="ring ring-1"></div>
+    <div class="ring ring-2"></div>
+    <div class="ring ring-3"></div>
+    <div class="ring ring-4"></div>
+    <div class="ring ring-5"></div>
+    <div class="bite"></div>
+  </body>
+</html>
