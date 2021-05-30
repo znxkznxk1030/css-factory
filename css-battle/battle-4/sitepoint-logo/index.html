@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Piano</title>
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+
+      body {
+        background: #222;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      body > div {
+        width: 150px;
+        height: 200px;
+        background: #222;
+        position: relative;
+      }
+
+      .left-bracket {
+        width: 100px;
+        height: 150px;
+        position: absolute;
+        left: 4px;
+        top: 0px;
+        background: #222;
+      }
+
+      ,
+      left-bracket > * {
+        background: #f2994a;
+      }
+
+      .unit-1 {
+        background: #f2994a;
+        width: 30px;
+        height: 100px;
+        transform: rotate(45deg);
+        margin-left: 27px;
+        margin-top: 8px;
+        border-radius: 0 0 0 10px;
+      }
+
+      .unit-2 {
+        background: #f2994a;
+        width: 30px;
+        height: 70px;
+        transform: rotate(-45deg);
+        margin-top: -39.5px;
+        margin-left: 22.5px;
+        border-radius: 0 0 5px 0;
+      }
+
+      .unit-3 {
+        background: #2d9cdb;
+        width: 30px;
+        height: 100px;
+        transform: rotate(45deg);
+        margin-left: 27px;
+        margin-top: 8px;
+        border-radius: 0 0 0 10px;
+      }
+
+      .unit-4 {
+        background: #2d9cdb;
+        width: 30px;
+        height: 70px;
+        transform: rotate(-45deg);
+        margin-top: -39.5px;
+        margin-left: 22.5px;
+        border-radius: 0 0 5px 0;
+      }
+
+      .right-bracket {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        transform: rotate(180deg);
+        right: 5px;
+        bottom: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sitepoint-logo">
+      <div class="left-bracket">
+        <div class="unit-1"></div>
+        <div class="unit-2"></div>
+      </div>
+      <div class="right-bracket">
+        <div class="unit-3"></div>
+        <div class="unit-4"></div>
+      </div>
+    </div>
+  </body>
+</html>
