@@ -1,0 +1,121 @@
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #191919;
+}
+
+.frozen-pattern {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  
+  transition: transform 500ms ease-in-out;
+}
+
+.center-hole {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  border: 10px solid #5DBCF9;
+  transition: border 300ms ease-in-out;
+}
+
+.side-stick {
+  position: absolute;
+  width: 10px;
+  height: 90px;
+  background: #5DBCF9;
+  top: 16px;
+  transform-origin: 5px 109px;
+  transition: background 600ms ease-in-out;
+}
+
+.side-stick > div {
+  background: #5DBCF9;
+  transition: background 1000ms ease-in-out;
+}
+
+.unit-2 {
+  transform: rotate(60deg);
+}
+
+.unit-3 {
+  transform: rotate(120deg);
+}
+
+.unit-4 {
+  transform: rotate(180deg);
+}
+
+.unit-5 {
+  transform: rotate(240deg);
+}
+
+.unit-6 {
+  transform: rotate(300deg);
+}
+
+.branch-sm {
+  width: 10px;
+  height: 25px;
+  position: relative;
+  background: #5DBCF9;
+}
+
+.branch-bg {
+  width: 10px;
+  height: 45px;
+  background: #5DBCF9;
+  background: red;
+  position: relative;
+}
+
+.branch-1 {
+  top: 15px;
+  left: 10px;
+  transform: rotate(45deg);
+}
+
+.branch-2 {
+  top: -10px;
+  left: -10px;
+  transform: rotate(-45deg);
+}
+
+.branch-3 {
+  transform: rotate(45deg);
+  left: 15px;
+  top: -15px;
+}
+
+.branch-4 {
+  transform: rotate(-45deg);
+  left: -15px;
+  top: -60px;
+}
+
+.frozen-pattern:active {
+  transform: rotate(180deg);
+}
+
+.frozen-pattern:active .center-hole {
+  border: 10px solid red;
+}
+
+
+.frozen-pattern:active .side-stick {
+  background: red;
+}
+
+.frozen-pattern:active .side-stick > div {
+  background: red;
+}
