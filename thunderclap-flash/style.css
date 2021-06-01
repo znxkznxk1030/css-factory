@@ -1,0 +1,159 @@
+html, body {
+  width: 100wh;
+  height: 100vh;
+}
+
+body {
+  background: #191919;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thunderclap-flash {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.thunder-effect {
+  position: absolute;
+  background-image: url("https://assets.codepen.io/1328906/lighting.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+  width: 1000px;
+  height: 450px;
+  opacity: 0;
+}
+
+.thunder-ring {
+  width: 220px;
+  height: 220px;
+  border-radius: 100%;
+  border: 15px solid #F0CC49;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border 100ms ease-in-out;
+}
+
+.thunder {
+/*   background: blue; */
+  width: 150px;
+  height: 300px;
+  position: relative;
+  top: -10px;
+}
+
+.thunder-piece-1 { 
+  width: 70px;
+  height: 120px;
+  background: #F0CC49;
+  transform: skew(-30deg, -25deg);
+  position: absolute;
+  left: 42px;
+  top: 38px;
+}
+
+.thunder-piece-2 { 
+  width: 93px;
+  height: 40px;
+  background: #F0CC49;
+  transform: skew(-30deg, -5deg);
+  position: absolute;
+  left: 20px;
+  top: 130px;
+}
+
+.thunder-piece-3 { 
+  width: 0;
+  height: 0;
+  transform: skew(-25deg, -5deg);
+  border-left: 35px solid transparent;
+  border-right: 35px solid transparent;
+  border-top: 170px solid #F0CC49;
+  position: absolute;
+  right: 52.5px;
+  bottom: 5px;
+}
+
+.thunderclap-flash:active .thunder-effect {
+  animation-name: thunder-effect;
+  animation-timing-function: ease;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+.thunder-ring:active .thunder {
+  animation-name: quick-draw;
+  animation-timing-function: ease;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+@keyframes quick-draw {
+  0% {
+    transform: translate(10px);
+  }
+  
+  10% {
+    transform: rotate(10deg) translate(50px);
+  }
+  
+  50% {
+    transform: rotate(-100deg) translate(-30px);
+  }
+  
+  
+  75% {
+    transform: rotate(-100deg) translate(-30px);
+  }
+  
+  80% {
+    opacity: 1;
+    transform: translate(-500px);
+  }
+  
+  90% {
+    opacity: 1;
+  }
+  
+  100%{
+    opacity: 1;
+    transform: rotate(0deg) translate(0px, 0px);
+  }
+}
+
+@keyframes thunder-effect {
+  0% {
+    opacity: 0;
+  }
+  
+  25% {
+    opacity: 0;
+  }
+  
+  30% {
+    opacity: 1;
+  }
+  
+  50% {
+    opacity: 0;
+  }
+  
+  90% {
+    opacity: 0;
+  }
+  
+  100% {
+    opacity: 1;
+  }
+}
+
+/* .thunder-ring:hover .thunder-ring {
+  border: 15px solid #E88858;
+}
+ */

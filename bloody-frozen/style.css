@@ -17,31 +17,235 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
-  
-  transition: transform 500ms ease-in-out;
+  transition: transform 1000ms ease-in-out;
 }
 
 .center-hole {
   width: 20px;
   height: 20px;
   border-radius: 100%;
-  border: 10px solid #5DBCF9;
-  transition: border 300ms ease-in-out;
+  border: 3px solid #5DBCF9;
+  transition: border 1000ms ease-in-out;
 }
 
 .side-stick {
   position: absolute;
-  width: 10px;
-  height: 90px;
+  width: 3px;
+  height: 120px;
   background: #5DBCF9;
-  top: 16px;
-  transform-origin: 5px 109px;
+  top: -8px;
+  transform-origin: 1.5px 131.5px;
+  transition: background 1000ms ease-in-out;
+}
+
+.side-stick::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  border: 3px solid #5DBCF9;
+  position: absolute;
+  left: -5.5px;
+  top: -11px;
+  transition: border 1000ms ease-in-out;
+}
+
+.side-stick > div:not(.hexagon-inner) {
+  background: #5DBCF9;
+  transition: background 1000ms ease-in-out;
+}
+
+.side-stick-sm {
+  position: absolute;
+  width: 3px;
+  height: 80px;
+  background: #5DBCF9;
+  top: 32px;
+  transform-origin: 1.5px 91.5px;
   transition: background 600ms ease-in-out;
 }
 
-.side-stick > div {
+.side-stick-sm::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  border: 3px solid #5DBCF9;
+  position: absolute;
+  left: -5.5px;
+  top: -11px;
+  transition: border 1000ms ease-in-out;
+}
+
+.side-stick-sm > div:not(.hexagon-inner){
   background: #5DBCF9;
   transition: background 1000ms ease-in-out;
+}
+
+.hexagon-outter {
+  width: 20px;
+  height: 11.547px;
+  position: absolute;
+  left: -8.55px;
+  top: 10px;
+}
+
+.hexagon-outter::before {
+  content: "";
+  position: absolute;
+  top: -5.7735px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 5.7735px solid #5DBCF9;
+  transition: border 1000ms ease-in-out;
+}
+
+.hexagon-outter::after {
+  content: "";
+  position: absolute;
+  bottom: -5.7735px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 5.7735px solid #5DBCF9;
+  transition: border 1000ms ease-in-out;
+}
+
+.hexagon-inner {
+  width: 14px;
+  height: 7.2px;
+  position: absolute;
+  background: #191919;
+  left: -5.54px;
+  top: 12.4px;
+
+}
+
+.hexagon-inner > span {
+  position: absolute;
+  top: -3.8px;
+  left: 1.5px;
+  color: #cc0000;
+  font-size: x-small;
+  font-weight: bold;
+   -ms-user-select: none; 
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  opacity: 0;
+  transition: opacity 1000ms ease-in-out;
+}
+
+.hexagon-inner::before {
+  content: "";
+  position: absolute;
+  top: -4.045px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 4.045px solid #191919;
+}
+
+.hexagon-inner::after {
+  content: "";
+  position: absolute;
+  bottom: -4.041px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 4.045px solid #191919;
+}
+
+.branch-sm {
+  width: 3px;
+  height: 25px;
+  position: relative;
+  background: #5DBCF9;
+}
+
+.branch-bg {
+  width: 3px;
+  height: 35px;
+  background: #5DBCF9;
+  position: relative;
+}
+
+.branch-1 {
+  top: 20px;
+  left: 9px;
+  transform: rotate(45deg);
+}
+
+.branch-2 {
+  top: -5px;
+  left: -9px;
+  transform: rotate(-45deg);
+}
+
+.branch-3 {
+  transform: rotate(45deg);
+  left: 12px;
+  top: -25px;
+}
+
+.branch-4 {
+  transform: rotate(-45deg);
+  left: -12px;
+  top: -60px;
+}
+
+.frozen-pattern:active {
+  transform: rotate(210deg);
+}
+
+.frozen-pattern:active .center-hole {
+  border-color: #cc0000;
+}
+
+.frozen-pattern:active .side-stick {
+  background: #cc0000;
+}
+
+.frozen-pattern:active .side-stick::before {
+  border-color: #cc0000;
+}
+
+.frozen-pattern:active .side-stick > div:not(.hexagon-inner) {
+  background: #cc0000;
+}
+
+.frozen-pattern:active .side-stick-sm {
+  background: #cc0000;
+}
+
+.frozen-pattern:active .side-stick-sm::before {
+  border-color: #cc0000;
+}
+
+.frozen-pattern:active .side-stick-sm > div:not(.hexagon-inner) {
+  background: #cc0000;
+}
+
+.frozen-pattern:active .hexagon-outter::before {
+  border-bottom-color: #cc0000;
+}
+
+.frozen-pattern:active .hexagon-outter::after {
+  border-top-color: #cc0000;
+}
+
+.frozen-pattern:active .hexagon-inner>span {
+  opacity: 1;
 }
 
 .unit-2 {
@@ -64,58 +268,26 @@ body {
   transform: rotate(300deg);
 }
 
-.branch-sm {
-  width: 10px;
-  height: 25px;
-  position: relative;
-  background: #5DBCF9;
+.unit-7 {
+  transform: rotate(30deg);
 }
 
-.branch-bg {
-  width: 10px;
-  height: 45px;
-  background: #5DBCF9;
-  background: red;
-  position: relative;
+.unit-8 {
+  transform: rotate(90deg);
 }
 
-.branch-1 {
-  top: 15px;
-  left: 10px;
-  transform: rotate(45deg);
+.unit-9 {
+  transform: rotate(150deg);
 }
 
-.branch-2 {
-  top: -10px;
-  left: -10px;
-  transform: rotate(-45deg);
+.unit-10 {
+  transform: rotate(210deg);
 }
 
-.branch-3 {
-  transform: rotate(45deg);
-  left: 15px;
-  top: -15px;
+.unit-11 {
+  transform: rotate(270deg);
 }
 
-.branch-4 {
-  transform: rotate(-45deg);
-  left: -15px;
-  top: -60px;
-}
-
-.frozen-pattern:active {
-  transform: rotate(180deg);
-}
-
-.frozen-pattern:active .center-hole {
-  border: 10px solid red;
-}
-
-
-.frozen-pattern:active .side-stick {
-  background: red;
-}
-
-.frozen-pattern:active .side-stick > div {
-  background: red;
+.unit-12 {
+  transform: rotate(330deg);
 }
