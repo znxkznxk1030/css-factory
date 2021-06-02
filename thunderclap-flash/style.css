@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   width: 100wh;
   height: 100vh;
 }
@@ -21,11 +22,11 @@ body {
 
 .thunder-effect {
   position: absolute;
-  background-image: url("https://assets.codepen.io/1328906/lighting.png");
+  background-image: url('https://assets.codepen.io/1328906/lighting.png');
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: stretch;
   width: 1000px;
-  height: 450px;
+  height: 500px;
   opacity: 0;
 }
 
@@ -33,48 +34,121 @@ body {
   width: 220px;
   height: 220px;
   border-radius: 100%;
-  border: 15px solid #F0CC49;
+  border: 10px solid #f0cc49;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: border 100ms ease-in-out;
 }
 
+.non-select {
+  -ms-user-select: none;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
 .thunder {
-/*   background: blue; */
   width: 150px;
   height: 300px;
   position: relative;
   top: -10px;
+  animation: shake 2s;
+  animation-iteration-count: infinite;
 }
 
-.thunder-piece-1 { 
+.thunder-trace-1 {
+  position: absolute;
+  opacity: 0;
+  top: -20px;
+  left: -5px;
+  /*   opacity: 0.7; */
+}
+
+.thunder-trace-2 {
+  position: absolute;
+  top: -75px;
+  left: -5px;
+  opacity: 0;
+}
+
+.thunder-trace-3 {
+  position: absolute;
+  top: -155px;
+  left: -5px;
+  opacity: 0;
+}
+
+.thunder-1 {
+  width: 150px;
+  height: 300px;
+  position: relative;
+}
+
+.thunder-3 > .thunder-piece-1 {
+  background: #f4db7f !important;
+}
+
+.thunder-3 > .thunder-piece-2 {
+  background: #f4db7f !important;
+}
+
+.thunder-3 > .thunder-piece-3 {
+  border-top: 170px solid #f4db7f !important;
+}
+
+.thunder-2 > .thunder-piece-1 {
+  background: #f7e5a4 !important;
+}
+
+.thunder-2 > .thunder-piece-2 {
+  background: #f7e5a4 !important;
+}
+
+.thunder-2 > .thunder-piece-3 {
+  border-top: 170px solid #f7e5a4 !important;
+}
+
+.thunder-1 > .thunder-piece-1 {
+  background: #fcf4da !important;
+}
+
+.thunder-1 > .thunder-piece-2 {
+  background: #fcf4da !important;
+}
+
+.thunder-1 > .thunder-piece-3 {
+  border-top: 170px solid #fcf4da !important;
+}
+
+.thunder-piece-1 {
   width: 70px;
   height: 120px;
-  background: #F0CC49;
+  background: #f0cc49;
   transform: skew(-30deg, -25deg);
   position: absolute;
   left: 42px;
   top: 38px;
 }
 
-.thunder-piece-2 { 
+.thunder-piece-2 {
   width: 93px;
   height: 40px;
-  background: #F0CC49;
+  background: #f0cc49;
   transform: skew(-30deg, -5deg);
   position: absolute;
   left: 20px;
   top: 130px;
 }
 
-.thunder-piece-3 { 
+.thunder-piece-3 {
   width: 0;
   height: 0;
   transform: skew(-25deg, -5deg);
   border-left: 35px solid transparent;
   border-right: 35px solid transparent;
-  border-top: 170px solid #F0CC49;
+  border-top: 170px solid #f0cc49;
   position: absolute;
   right: 52.5px;
   bottom: 5px;
@@ -83,77 +157,174 @@ body {
 .thunderclap-flash:active .thunder-effect {
   animation-name: thunder-effect;
   animation-timing-function: ease;
-  animation-duration: 1s;
+  animation-duration: 1.5s;
   animation-iteration-count: 1;
 }
 
-.thunder-ring:active .thunder {
+.thunderclap-flash:active .thunder {
   animation-name: quick-draw;
   animation-timing-function: ease;
   animation-duration: 1s;
   animation-iteration-count: 1;
 }
 
+.thunderclap-flash:active .thunder > .thunder-piece-1 {
+  animation-name: quick-draw-trace-0;
+  animation-timing-function: ease;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+.thunderclap-flash:active .thunder > .thunder-piece-2 {
+  animation-name: quick-draw-trace-0;
+  animation-timing-function: ease;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+.thunderclap-flash:active .thunder > .thunder-piece-3 {
+  animation-name: quick-draw-trace-0;
+  animation-timing-function: ease;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+.thunderclap-flash:active .thunder-trace-1 {
+  animation-name: quick-draw-trace-1;
+  animation-timing-function: ease;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+.thunderclap-flash:active .thunder-trace-2 {
+  animation-name: quick-draw-trace-1;
+  animation-timing-function: ease;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+.thunderclap-flash:active .thunder-trace-3 {
+  animation-name: quick-draw-trace-1;
+  animation-timing-function: ease;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
 @keyframes quick-draw {
-  0% {
-    transform: translate(10px);
+  0%,
+  100% {
+    transform: rotate(0deg) translate(0px, 0px);
   }
-  
+
   10% {
     transform: rotate(10deg) translate(50px);
   }
-  
-  50% {
-    transform: rotate(-100deg) translate(-30px);
+
+  50%,
+  59% {
+    transform: rotate(-75deg) translate(-30px);
   }
-  
-  
-  75% {
-    transform: rotate(-100deg) translate(-30px);
-  }
-  
-  80% {
-    opacity: 1;
+
+  60% {
     transform: translate(-500px);
   }
-  
-  90% {
+}
+
+@keyframes quick-draw-trace-0 {
+  10% {
     opacity: 1;
   }
-  
-  100%{
+
+  40% {
     opacity: 1;
-    transform: rotate(0deg) translate(0px, 0px);
+  }
+
+  44%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes quick-draw-trace-1 {
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  45%,
+  57% {
+    opacity: 0;
+  }
+
+  46%,
+  56% {
+    opacity: 1;
+  }
+}
+
+@keyframes quick-draw-trace-2 {
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  53%,
+  56% {
+    opacity: 0;
+  }
+
+  54%,
+  55% {
+    opacity: 1;
+  }
+}
+
+@keyframes quick-draw-trace-3 {
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  54%,
+  56% {
+    opacity: 0;
+  }
+
+  55% {
+    opacity: 1;
   }
 }
 
 @keyframes thunder-effect {
-  0% {
-    opacity: 0;
-  }
-  
-  25% {
-    opacity: 0;
-  }
-  
-  30% {
-    opacity: 1;
-  }
-  
-  50% {
-    opacity: 0;
-  }
-  
-  90% {
-    opacity: 0;
-  }
-  
+  0%,
+  52%,
+  57%,
+  75%,
+  90%,
   100% {
+    opacity: 0;
+  }
+
+  54%,
+  77% {
     opacity: 1;
   }
 }
 
-/* .thunder-ring:hover .thunder-ring {
-  border: 15px solid #E88858;
+@keyframes shake {
+  60%,
+  80% {
+    transform: rotate(5deg);
+  }
+
+  70%,
+  90% {
+    transform: rotate(-20deg);
+  }
+
+  0%,
+  50%,
+  100% {
+    transform: rotate(0);
+  }
 }
- */
