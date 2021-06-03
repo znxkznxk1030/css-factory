@@ -291,3 +291,23 @@ body {
 .unit-12 {
   transform: rotate(330deg);
 }
+
+
+@keyframes shake {
+  60%,
+  80% {
+    transform: rotate(5deg);
+  }
+  
+
+  70%,
+  90% {
+    transform: rotate(-20deg);
+  }
+
+  0%,
+  50%,
+  100% {
+    transform: rotate(0);
+  }
+}
