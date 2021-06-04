@@ -52,55 +52,55 @@ body {
 
 .light-1 { 
   left: 5%;
-  background: blue;
+  background: #C0672A;
   animation-delay: .4s;
 }
 
 .light-2 { 
   left: 7%;
-  background: cyan;
+  background: #C5772E;
   animation-delay: .7s;
 }
 
 .light-3 { 
   left: 15%;
-  background: yellow;
+  background: #D29937;
   animation-delay: .6s;
 }
 
 .light-4 { 
   left: 20%;
-  background: blue;
+  background: #DAA53A;
   animation-delay: 2.5s;
 }
 
 .light-5 { 
   left: 26%;
-  background: red;
+  background: #ECD447;
   animation-delay: 1.5s;
 }
 
 .light-6 { 
   left: 40%;
-  background: yellow;
+  background: #F9EC6B;
   animation-delay: .3s;
 }
 
 .light-7 { 
   left: 46%;
-  background: blue;
+  background: #F8F07F;
   animation-delay: 1.7s;
 }
 
 .light-8 { 
   left: 53%;
-  background: red;
+  background: #FDF5AB;
   animation-delay: 2.1s;
 }
 
 .light-9 { 
   left: 57%;
-  background: yellow;
+  background: #FEFBE0;
   animation-delay: .8s;
 }
 
@@ -112,74 +112,140 @@ body {
 
 .light-11 { 
   left: 66%;
-  background: red;
+  background: #FEFDF7;
   animation-delay: 2.6s;
 }
 
 .light-12 { 
   left: 69%;
-  background: yellow;
+  background: #EEF5FB;
   animation-delay: 1.1s;
 }
 
 .light-13 { 
   left: 74%;
-  background: blue;
+  background: #BFDBF0;
   animation-delay: 1.7s;
 }
 
 .light-14 { 
   left: 77%;
-  background: cyan;
+  background: #6FA7D8;
   animation-delay: .2s;
 }
 
 .light-15 { 
   left: 80%;
-  background: yellow;
+  background: #BD5929;
   animation-delay: 2.1s;
 }
 
 .light-16 { 
   left: 82%;
-  background: blue;
+  background: #CA8332;
   animation-delay: .8s;
 }
 
 .light-17 { 
   left: 86%;
-  background: red;
+  background: #6299CF;
   animation-delay: 1.6s;
 }
 
 .light-18 { 
   left: 89%;
-  background: yellow;
+  background: #BD5929;
   animation-delay: .5s;
 }
 
 .light-19 { 
   left: 91%;
-  background: blue;
+  background: #5483C1;
   animation-delay: 2.9s;
 }
 
 .light-20 { 
   left: 93%;
-  background: red;
+  background: #507FC1;
   animation-delay: 1.5s;
 }
 
 .light-21 { 
   left: 97%;
-  background: yellow;
+  background: #CA8332;
   animation-delay: 2.5s;
 }
 
 .light-22 { 
   left: 61%;
-  background: blue;
+  background: #415CA5;
   animation-delay: .5s;
+}
+
+.light-23 { 
+  left: 29%;
+  background: #BD5929;
+  animation-delay: .5s;
+}
+
+.light-24 { 
+  left: 25%;
+  background: #5483C1;
+  animation-delay: .9s;
+}
+
+.light-25 { 
+  left: 19%;
+  background: #CA8332;
+  animation-delay: 1.5s;
+}
+
+.light-26 { 
+  left: 26%;
+  background: #4669AE;
+  animation-delay: 2.7s;
+}
+
+.light-27 { 
+  left: 22%;
+  background: #415CA5;
+  animation-delay: .3s;
+}
+
+.light-28 { 
+  left: 33%;
+  background: #BD5929;
+  animation-delay: .1s;
+}
+
+.light-29 { 
+  left: 25%;
+  background: #5483C1;
+  animation-delay: 2.9s;
+}
+
+.light-30 { 
+  left: 1%;
+  background: #BD5929;
+  animation-delay: 1.1s;
+}
+
+.light-31 { 
+  left: 3%;
+  background: #C36C2C;
+  animation-delay: .9s;
+}
+
+.light-32 { 
+  left: 7%;
+  background: #CA8332;
+  animation-delay: .7s;
+}
+
+.light-33 { 
+  left: 9%;
+  background: #D49E39;
+  animation-delay: 1.1s;
 }
 
 .netflix-text-effect:hover .bar-1{
@@ -205,13 +271,13 @@ body {
 
 .netflix-text-effect:hover .analog-lights :nth-child(odd) {
   animation-name: move-right;
-  animation-duration: 4.5s;
+  animation-duration: 3s;
   animation-iteration-count: 1;
 }
 
 .netflix-text-effect:hover .analog-lights :nth-child(even) {
   animation-name: move-left;
-  animation-duration: 4.5s;
+  animation-duration: 3s;
   animation-iteration-count: 1;
 }
 
