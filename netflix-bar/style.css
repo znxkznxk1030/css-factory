@@ -1,0 +1,262 @@
+:root {
+  --bg-color: #000;
+  --bar-color: #e40913;
+}
+
+html, body {
+  width: 100%;
+  height: 100vh;
+  background: var(--bg-color);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.netflix-text-effect {
+  position: relative;
+/*   background: green; */
+  width: 300px;
+  height: 300px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bar-1 {
+  width: 70px;
+  height: 250px;
+  position: relative;
+}
+
+.bar {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: red;
+}
+
+.analog-lights {
+  height: 100%;
+  opacity: 0;
+}
+
+.analog-lights > [class*="light-"] {
+  position: absolute;
+  height: 100%;
+  width: 1.8%;
+}
+
+.light-1 { 
+  left: 5%;
+  background: blue;
+  animation-delay: .4s;
+}
+
+.light-2 { 
+  left: 7%;
+  background: cyan;
+  animation-delay: .7s;
+}
+
+.light-3 { 
+  left: 15%;
+  background: yellow;
+  animation-delay: .6s;
+}
+
+.light-4 { 
+  left: 20%;
+  background: blue;
+  animation-delay: 2.5s;
+}
+
+.light-5 { 
+  left: 26%;
+  background: red;
+  animation-delay: 1.5s;
+}
+
+.light-6 { 
+  left: 40%;
+  background: yellow;
+  animation-delay: .3s;
+}
+
+.light-7 { 
+  left: 46%;
+  background: blue;
+  animation-delay: 1.7s;
+}
+
+.light-8 { 
+  left: 53%;
+  background: red;
+  animation-delay: 2.1s;
+}
+
+.light-9 { 
+  left: 57%;
+  background: yellow;
+  animation-delay: .8s;
+}
+
+.light-10 { 
+  left: 61%;
+  background: blue;
+  animation-delay: .6s;
+}
+
+.light-11 { 
+  left: 66%;
+  background: red;
+  animation-delay: 2.6s;
+}
+
+.light-12 { 
+  left: 69%;
+  background: yellow;
+  animation-delay: 1.1s;
+}
+
+.light-13 { 
+  left: 74%;
+  background: blue;
+  animation-delay: 1.7s;
+}
+
+.light-14 { 
+  left: 77%;
+  background: cyan;
+  animation-delay: .2s;
+}
+
+.light-15 { 
+  left: 80%;
+  background: yellow;
+  animation-delay: 2.1s;
+}
+
+.light-16 { 
+  left: 82%;
+  background: blue;
+  animation-delay: .8s;
+}
+
+.light-17 { 
+  left: 86%;
+  background: red;
+  animation-delay: 1.6s;
+}
+
+.light-18 { 
+  left: 89%;
+  background: yellow;
+  animation-delay: .5s;
+}
+
+.light-19 { 
+  left: 91%;
+  background: blue;
+  animation-delay: 2.9s;
+}
+
+.light-20 { 
+  left: 93%;
+  background: red;
+  animation-delay: 1.5s;
+}
+
+.light-21 { 
+  left: 97%;
+  background: yellow;
+  animation-delay: 2.5s;
+}
+
+.light-22 { 
+  left: 61%;
+  background: blue;
+  animation-delay: .5s;
+}
+
+.netflix-text-effect:hover .bar-1{
+  animation-name: zoom-in;
+  animation-duration: 4s;
+	animation-delay: .5s;
+  animation-iteration-count: 1;
+}
+
+.netflix-text-effect:hover .bar{
+  animation-name: fade-out;
+  animation-duration: 4s;
+	animation-delay: .5s;
+  animation-iteration-count: 1;
+}
+
+.netflix-text-effect:hover .analog-lights{
+  animation-name: fade-in;
+  animation-duration: 3s;
+	animation-delay: .5s;
+  animation-iteration-count: 1;
+}
+
+.netflix-text-effect:hover .analog-lights :nth-child(odd) {
+  animation-name: move-right;
+  animation-duration: 4.5s;
+  animation-iteration-count: 1;
+}
+
+.netflix-text-effect:hover .analog-lights :nth-child(even) {
+  animation-name: move-left;
+  animation-duration: 4.5s;
+  animation-iteration-count: 1;
+}
+
+@keyframes zoom-in {
+  100% {
+    transform: scale(15);
+  }
+}
+
+@keyframes fade-out {
+  70%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes move-left {
+  40% {
+    transform: translate(30px);
+  }
+  
+  60% {
+    transform: translate(220px);
+  }
+  
+  100% {
+    transform: translate(320px) scaleX(3);
+  }
+}
+
+@keyframes move-right {
+  40% {
+    transform: translate(-30px);
+  }
+  
+  60% {
+    transform: translate(-220px);
+  }
+  
+  100% {
+    transform: translate(-320px) scaleX(3);
+  }
+}
