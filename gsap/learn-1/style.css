@@ -1,0 +1,18 @@
+body,
+html {
+  width: 100wh;
+  height: 100vh;
+  background: #000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background: #191;
+  position: absolute;
+}
