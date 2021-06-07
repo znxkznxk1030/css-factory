@@ -8,7 +8,7 @@ class App {
     this.ctx = this.canvas.getContext('2d');
     document.body.appendChild(this.canvas);
 
-    this.wave = new Wave();
+    this.wave = new Wave(11);
 
     window.addEventListener('resize', this.resize.bind(this), false);
     this.resize();
@@ -42,12 +42,13 @@ class Point {
 
     this.speed = 0.05;
     this.weight = index;
-    this.max = Math.random() * 100 + 150;
+    this.max = Math.random() * 100 + document.body.clientWidth / 50;
+    this.min = Math.random() * 100 + document.body.clientWidth / 50;
   }
 
   update() {
-    this.weight += this.speed;
-    this.y = this.originY + Math.sin(this.weight) * this.max;
+    this.weight += this.speed + Math.random() * 0.05;
+    this.y = this.originY + Math.sin(this.weight) * this.max + Math.cos(this.weight) * this.min;
   }
 }
 
@@ -77,14 +78,33 @@ class Wave {
   }
 
   draw(ctx) {
+    ctx.beginPath();
+    ctx.fillStyle = '#51c4d3';
+
+    let prevX = this.points[0].x;
+    let prevY = this.points[0].y;
+    let midX;
+    let midY;
+
+    ctx.moveTo(prevX, prevY);
 
     for (let i = 0; i < this.numPoints; i++) {
-      ctx.beginPath();
-      ctx.fillStyle = 'red';
       const point = this.points[i];
-      ctx.arc(point.x, point.y, 20, 0, 2 * Math.PI);
-      ctx.fill();
       point.update();
+
+      midX = ( prevX + point.x ) / 2
+      midY = ( prevY + point.y ) / 2
+
+      ctx.quadraticCurveTo(prevX, prevY, midX, midY);
+
+      prevX = point.x
+      prevY = point.y
+      // ctx.arc(point.x, point.y, 20, 0, 2 * Math.PI);
     }
+
+    ctx.quadraticCurveTo(midX, midY, prevX, prevY);
+    ctx.lineTo(prevX, this.stageHeight);
+    ctx.lineTo(0, this.stageHeight);
+    ctx.fill();
   }
 }
