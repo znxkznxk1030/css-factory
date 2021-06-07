@@ -35,13 +35,13 @@ class App {
 }
 
 class Point {
-  constructor(x, y) {
+  constructor(x, y, index) {
     this.x = x;
     this.y = y;
     this.originY = y;
 
     this.speed = 0.05;
-    this.weight = 0;
+    this.weight = index;
     this.max = Math.random() * 100 + 150;
   }
 
@@ -52,7 +52,9 @@ class Point {
 }
 
 class Wave {
-  constructor() {}
+  constructor(numPoints) {
+    this.numPoints = numPoints ?? 8;
+  }
 
   resize(stageWidth, stageHeight) {
     this.stageWidth = stageWidth;
@@ -61,21 +63,28 @@ class Wave {
     this.centerX = stageWidth / 2;
     this.centerY = stageHeight / 2;
 
+    this.gapX = this.stageWidth / (this.numPoints - 1);
+
     this.init();
   }
 
   init() {
-    this.point = new Point(this.centerX, this.centerY);
+    this.points = []
+
+    for (let i = 0; i < this.numPoints; i++) {
+      this.points.push(new Point(this.gapX * i, this.centerY, i));
+    }
   }
 
   draw(ctx) {
-    ctx.beginPath();
-    ctx.fillStyle = 'red';
 
-    console.log(this.point);
-
-    ctx.arc(this.point.x, this.point.y, 20, 0, 2 * Math.PI);
-    ctx.fill();
-    this.point.update();
+    for (let i = 0; i < this.numPoints; i++) {
+      ctx.beginPath();
+      ctx.fillStyle = 'red';
+      const point = this.points[i];
+      ctx.arc(point.x, point.y, 20, 0, 2 * Math.PI);
+      ctx.fill();
+      point.update();
+    }
   }
 }
