@@ -8,7 +8,7 @@ class App {
     this.ctx = this.canvas.getContext('2d');
     document.body.appendChild(this.canvas);
 
-    this.wave = new Wave(11);
+    this.wave = new Wave();
 
     window.addEventListener('resize', this.resize.bind(this), false);
     this.resize();
@@ -53,8 +53,7 @@ class Point {
 }
 
 class Wave {
-  constructor(numPoints) {
-    this.numPoints = numPoints ?? 8;
+  constructor() {
   }
 
   resize(stageWidth, stageHeight) {
@@ -64,12 +63,13 @@ class Wave {
     this.centerX = stageWidth / 2;
     this.centerY = stageHeight / 2;
 
-    this.gapX = this.stageWidth / (this.numPoints - 1);
 
     this.init();
   }
 
   init() {
+    this.numPoints = parseInt(this.stageWidth / 100);
+    this.gapX = this.stageWidth / (this.numPoints - 1);
     this.points = []
 
     for (let i = 0; i < this.numPoints; i++) {
