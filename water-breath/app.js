@@ -8,7 +8,7 @@ class App {
     this.ctx = this.canvas.getContext('2d');
     document.body.appendChild(this.canvas);
 
-    this.waveGroup = new WaveGroup(8);
+    this.waveGroup = new WaveGroup(3);
 
     window.addEventListener('resize', this.resize.bind(this), false);
     this.resize();
@@ -41,7 +41,7 @@ class Point {
     this.y = y;
     this.originY = y;
 
-    this.speed = 0.05;
+    this.speed = 0.03;
     this.weight = pointId++;
     this.max = Math.random() * 100 + document.body.clientWidth / 50;
     this.min = Math.random() * 100 + document.body.clientWidth / 50;
