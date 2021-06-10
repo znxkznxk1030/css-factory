@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Boxception</title>
+    <style>
+      html,
+      body {
+        width: 100wh;
+        height: 100vh;
+      }
+
+      body {
+        background: #f3ac3c;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      body > div {
+        width: 200px;
+        height: 200px;
+        background: #1a4341;
+        position: relative;
+      }
+
+      body > div > div {
+        width: 100px;
+        height: 100px;
+        background: #998235;
+        position: absolute;
+        bottom: 0;
+      }
+
+      body > div > div > div {
+        width: 50px;
+        height: 50px;
+        background: #f3ac3c;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div>
+        <div></div>
+      </div>
+    </div>
+  </body>
+</html>
