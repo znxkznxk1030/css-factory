@@ -41,5 +41,27 @@ export class BounceString {
     ctx.fillStyle = '#ff00ff';
     ctx.arc(moveX, moveY, 20, 0, Math.PI * 2, false);
     ctx.fill();
+
+    let prevX = this.points[0].x;
+    let prevY = this.points[0].y;
+
+    ctx.beginPath();
+    ctx.strokeStyle = this.color;
+    ctx.lineWidth = 4;
+    ctx.moveTo(prevX, prevY);
+
+    this.points.slice(1).forEach((point) => {
+      const cx = (prevX + point.x) / 2;
+      const cy = (prevY + point.Y) / 2;
+
+      ctx.quadraticCurveTo(prevX, prevY, cx, cy);
+
+      prevX = point.x;
+      prevY = point.y;
+    });
+
+    ctx.lineTo(prevX, prevY);
+
+    ctx.stroke();
   }
 }
