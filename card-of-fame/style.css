@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+ html, body {
+	 margin: 0;
+	 padding: 0;
+	 outline: 0;
+	 width: 100vw;
+	 height: 100vh;
+	 font-family: 'Jua', sans-serif;
+}
+ body {
+	 background: #fff;
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+}
+ .card-of-fame {
+	 width: 160px;
+	 height: 180px;
+	 background: #000;
+	 position: relative;
+	 border: 10px solid transparent;
+	 border-radius: 5%;
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+}
+ .card-of-fame::before {
+	 content: '';
+	 width: 120px;
+	 height: 130px;
+	 position: absolute;
+	 background: #1b130e;
+	 border-radius: 100%;
+	 border: 10px solid transparent;
+	 top: -70px;
+	 left: 10px;
+	 z-index: -1;
+}
+ .card-of-fame:hover .picture {
+	 transform: scale(1.1) translateY(-5px);
+}
+ .picture-background {
+	 width: 100px;
+	 height: 120px;
+	 background: linear-gradient(45deg, #aa771c, #fcf6ba, #b38728);
+	 border: #000 solid 10px;
+	 border-radius: 120px 120px 0 0;
+	 position: absolute;
+	 left: 21px;
+	 top: -60px;
+}
+ .picture-background .picture {
+	 position: absolute;
+	 top: 0px;
+	 left: -5px;
+	 width: 110px;
+	 height: 110px;
+	 transition: transform 0.1s ease-in-out;
+}
+ .name {
+	 color: white;
+	 margin-top: 10px;
+	 font-size: 25px;
+}
+ 
