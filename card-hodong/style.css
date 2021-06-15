@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Oswald:wght@400;500&family=Ubuntu+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+ * {
+	 margin: 0;
+	 padding: 0;
+	 outline: 0;
+	 box-sizing: border-box;
+}
+ html, body {
+	 height: 100vh;
+	 width: 100vw;
+}
+ body {
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+	 background: #000;
+}
+ .ent-card {
+	 width: 270px;
+	 height: 410px;
+	 background-image: url("https://assets.codepen.io/1328906/fifa-gold-background.png?width=322&height=450&format=auto");
+	 background-position: center center;
+	 color: #412e1c;
+}
+ .ent-card .info-top {
+	 width: 100%;
+	 height: 213px;
+	 display: flex;
+}
+ .ent-card .info-top .profile-left {
+	 width: 45%;
+	 height: 100%;
+}
+ .ent-card .info-top .profile-left > * {
+	 margin-left: 23px;
+	 text-align: center;
+}
+ .ent-card .info-top .profile-left .total-score {
+	 margin-top: 40px;
+	 height: 55px;
+	 font-size: 47px;
+	 font-family: 'Lato', sans-serif;
+	 font-weight: 400;
+	 letter-spacing: -1px;
+}
+ .ent-card .info-top .profile-left .total-score span {
+	 display: inline-block;
+	 margin: 5px -2px 0 0;
+}
+ .ent-card .info-top .profile-left .position {
+	 height: 30px;
+	 font-size: 25px;
+	 font-family: 'Oswald', sans-serif;
+}
+ .ent-card .info-top .profile-left .position span {
+	 display: inline-block;
+}
+ .ent-card .info-top .profile-left .company {
+	 height: 70px;
+}
+ .ent-card .info-top .profile-left .company img {
+	 margin: 15px 0 0 6px;
+}
+ .ent-card .info-top .profile-right {
+	 width: 60%;
+	 height: 100%;
+	 position: relative;
+}
+ .ent-card .info-top .profile-right img {
+	 position: absolute;
+	 bottom: 0;
+	 right: 5px;
+}
+ .ent-card .info-name {
+	 width: 100%;
+	 height: 45px;
+	 text-align: center;
+	 font-size: 30px;
+	 font-family: 'Oswald', sans-serif;
+	 font-weight: 500;
+	 text-transform: uppercase;
+}
+ .ent-card .info-name span {
+	 display: inline-block;
+}
+ .ent-card .info-bottom {
+	 width: 100%;
+	 height: 152px;
+	 display: grid;
+	 grid-template-columns: 40px 70px auto 70px 40px;
+	 grid-template-rows: 0px 18% 18% 18%;
+	 column-gap: 10px;
+	 row-gap: 5px;
+}
+ .ent-card .info-bottom .cell-1 {
+	 grid-column-start: 2;
+	 grid-column-end: 3;
+	 grid-row-start: 2;
+	 grid-row-end: 3;
+}
+ .ent-card .info-bottom .cell-2 {
+	 grid-column-start: 2;
+	 grid-column-end: 3;
+	 grid-row-start: 3;
+	 grid-row-end: 4;
+}
+ .ent-card .info-bottom .cell-3 {
+	 grid-column-start: 2;
+	 grid-column-end: 3;
+	 grid-row-start: 4;
+	 grid-row-end: 5;
+}
+ .ent-card .info-bottom .cell-4 {
+	 grid-column-start: 4;
+	 grid-column-end: 5;
+	 grid-row-start: 2;
+	 grid-row-end: 3;
+}
+ .ent-card .info-bottom .cell-5 {
+	 grid-column-start: 4;
+	 grid-column-end: 5;
+	 grid-row-start: 3;
+	 grid-row-end: 4;
+}
+ .ent-card .info-bottom .cell-6 {
+	 grid-column-start: 4;
+	 grid-column-end: 5;
+	 grid-row-start: 4;
+	 grid-row-end: 5;
+}
+ .ent-card .info-bottom div[class*="cell-"] {
+	 display: flex;
+	 overflow: hidden;
+}
+ .ent-card .info-bottom div[class*="cell-"] .stat-score {
+	 width: 45%;
+	 font-family: 'Lato', sans-serif;
+	 font-weight: 500;
+	 margin-top: -3px;
+	 letter-spacing: -1px;
+	 text-align: center;
+	 font-size: 25px;
+}
+ .ent-card .info-bottom div[class*="cell-"] .stat-title {
+	 font-family: 'Open Sans Condensed', sans-serif;
+	 margin: -5px 0 0 3px;
+	 letter-spacing: -1px;
+	 font-size: 25px;
+}
+ 
