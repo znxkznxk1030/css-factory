@@ -14,52 +14,204 @@
 	 justify-content: center;
 }
  .card-of-fame {
-	 width: 160px;
-	 height: 180px;
+	 width: 180px;
+	 height: 200px;
 	 background: #000;
 	 position: relative;
-	 border: 10px solid transparent;
-	 border-radius: 5%;
-	 display: flex;
-	 align-items: center;
-	 justify-content: center;
+	 border-radius: 3%;
+	 transition: width 0.3s ease-in, height 0.3s ease-in;
 }
  .card-of-fame::before {
 	 content: '';
-	 width: 120px;
+	 width: 130px;
 	 height: 130px;
 	 position: absolute;
-	 background: #1b130e;
+	 background: #000;
 	 border-radius: 100%;
-	 border: 10px solid transparent;
-	 top: -70px;
-	 left: 10px;
+	 top: -60px;
+	 left: 25px;
 	 z-index: -1;
 }
- .card-of-fame:hover .picture {
-	 transform: scale(1.1) translateY(-5px);
+ .card-of-fame:hover {
+	 width: 350px;
+	 height: 500px;
 }
- .picture-background {
+ .card-of-fame:hover .frame-1 {
+	 width: 350px;
+}
+ .card-of-fame .picture-background {
 	 width: 100px;
 	 height: 120px;
 	 background: linear-gradient(45deg, #aa771c, #fcf6ba, #b38728);
-	 border: #000 solid 10px;
 	 border-radius: 120px 120px 0 0;
 	 position: absolute;
-	 left: 21px;
-	 top: -60px;
+	 left: 40px;
+	 top: -45px;
+	 z-index: 1;
 }
- .picture-background .picture {
+ .card-of-fame .picture-background .picture {
 	 position: absolute;
 	 top: 0px;
 	 left: -5px;
 	 width: 110px;
 	 height: 110px;
-	 transition: transform 0.1s ease-in-out;
+	 transition: transform 0.3s ease-out;
 }
- .name {
+ .card-of-fame:hover .picture {
+	 transform: scale(1.3) translateY(-15px);
+	 transition: transform 0.3s ease-in;
+}
+ .card-of-fame .frame-1 {
+	 position: relative;
+	 width: 350px;
+	 height: 120px;
+	 transition: width 0.3s ease-in, height 0.3s ease-in;
+	 overflow: hidden;
+	 border-radius: 3%;
+}
+ .card-of-fame .frame-1 .background-circle {
+	 width: 150px;
+	 height: 150px;
+	 background: #f7e98e;
+	 position: absolute;
+	 right: -45px;
+	 top: -35px;
+	 border-radius: 100%;
+	 z-index: 0;
+	 opacity: 0;
+	 transition: opacity 0.1s ease-out;
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+}
+ .card-of-fame .frame-1 .background-circle .score {
+	 margin: 30px 30px 0 0;
+	 color: black;
+	 font-size: 70px;
+	 opacity: 0;
+	 transform: translateY(30px);
+}
+ .card-of-fame:hover .frame-1 > .background-circle {
+	 opacity: 1;
+	 transition: opacity 0.5s ease-in;
+	 transition-delay: 0.3s;
+}
+ .card-of-fame:hover .frame-1 > .background-circle > .score {
+	 opacity: 1;
+	 transform: translateY(0px);
+	 transition: transform 0.5s ease-in, opacity 0.5s ease-in;
+	 transition-delay: 0.7s;
+}
+ .card-of-fame .name {
 	 color: white;
-	 margin-top: 10px;
 	 font-size: 25px;
+	 text-align: center;
+	 position: absolute;
+	 width: 180px;
+	 top: 85px;
+}
+ .card-of-fame .stat-table {
+	 width: 350px;
+	 height: calc(500px - 120px);
+	 position: relative;
+	 display: grid;
+	 grid-template-columns: 7px calc(350px / 2 - 30px) auto calc(350px / 2 - 30px) 7px;
+	 grid-template-rows: 30px 25% 25% 25%;
+	 column-gap: 10px;
+	 row-gap: 10px;
+}
+ .card-of-fame .stat-table .cell-1 {
+	 grid-column-start: 2;
+	 grid-column-end: 3;
+	 grid-row-start: 2;
+	 grid-row-end: 3;
+}
+ .card-of-fame .stat-table .cell-2 {
+	 grid-column-start: 2;
+	 grid-column-end: 3;
+	 grid-row-start: 3;
+	 grid-row-end: 4;
+}
+ .card-of-fame .stat-table .cell-3 {
+	 grid-column-start: 2;
+	 grid-column-end: 3;
+	 grid-row-start: 4;
+	 grid-row-end: 5;
+}
+ .card-of-fame .stat-table .cell-4 {
+	 grid-column-start: 4;
+	 grid-column-end: 5;
+	 grid-row-start: 2;
+	 grid-row-end: 3;
+}
+ .card-of-fame .stat-table .cell-5 {
+	 grid-column-start: 4;
+	 grid-column-end: 5;
+	 grid-row-start: 3;
+	 grid-row-end: 4;
+}
+ .card-of-fame .stat-table .cell-6 {
+	 grid-column-start: 4;
+	 grid-column-end: 5;
+	 grid-row-start: 4;
+	 grid-row-end: 5;
+}
+ .card-of-fame .stat-table div[class*="cell-"] {
+	 overflow: hidden;
+}
+ .card-of-fame .stat-table div[class*="cell-"] .stat-title {
+	 color: white;
+	 font-size: 20px;
+	 text-align: center;
+	 letter-spacing: 10px;
+	 opacity: 0;
+}
+ .card-of-fame .stat-table div[class*="cell-"] .stat-score {
+	 color: white;
+	 font-size: 30px;
+	 text-align: center;
+	 letter-spacing: 10px;
+	 opacity: 0;
+	 transform: translateY(30px);
+}
+ .card-of-fame .stat-table:hover div[class*="cell-"] > .stat-title {
+	 opacity: 1;
+	 transition: opacity 0.2s ease-in;
+}
+ .card-of-fame .stat-table:hover div[class*="cell-"] > .stat-score {
+	 transform: translateY(0);
+	 opacity: 1;
+	 transition: transform 0.2s ease-in, opacity 0.2s ease-in;
+	 transition-delay: 0.3s;
+}
+ .card-of-fame .stat-table .divide-line-horizontal {
+	 position: absolute;
+	 top: 15px;
+	 left: 22px;
+	 width: calc(350px - 40px);
+	 height: 2px;
+	 background: white;
+	 transform: scaleX(0) translateX(20%);
+	 transition: transform ease-out;
+}
+ .card-of-fame .stat-table .divide-line-vertical {
+	 position: absolute;
+	 top: 41px;
+	 left: calc(350px / 2);
+	 width: 2px;
+	 height: calc(calc(500px - 120px) - 90px);
+	 background: white;
+	 transform: scaleY(0);
+	 transition: transform ease-out;
+}
+ .card-of-fame:hover .stat-table > .divide-line-horizontal {
+	 transform: scaleX(1) translateX(0);
+	 transition: transform 0.2s ease-in;
+	 transition-delay: 0.2s;
+}
+ .card-of-fame:hover .stat-table > .divide-line-vertical {
+	 transform: scaleY(1);
+	 transition: transform 0.2s ease-in;
+	 transition-delay: 0.2s;
 }
  
