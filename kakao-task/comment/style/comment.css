@@ -1,0 +1,17 @@
+.clearfix {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.label {
+  padding-right: 40px;
+}
+
+.input-box {
+  margin-bottom: 20px;
+}
+
+.btn-submit {
+  margin-top:10px;
+}

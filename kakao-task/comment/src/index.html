@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Comment Test</title>
+    <link rel="stylesheet" href="../style/comment.css" />
+  </head>
+  <body>
+    <script src="./bundle.js"></script>
+    <h1 id="title">카카오 댓글</h1>
+
+    <div id="cmt-1"></div>
+
+    <div style="float: left">
+      <button id="btn-prev">< 이전</button>
+      <span id="currpage" />
+      <button id="btn-next">다음 ></button>
+    </div>
+    <br />
+    <hr />
+    <div class="clearfix">
+      <div class="name-box">
+        <h4 class="label">이름</h4>
+        <input
+          id="input-name"
+          type="text"
+          name="textfield"
+          style="text-align: left; width: 150px; height: 20px"
+        />
+      </div>
+      <div class="clearfix name-box">
+        <h4 class="label">댓글</h4>
+        <input
+          id="input-comment"
+          type="text"
+          name="textfield"
+          style="text-align: left; width: 350px; height: 250px"
+        />
+      </div>
+      <button id="btn-submit">공개 댓글 추가</button>
+    </div>
+    <div
+      id="footer"
+      style="
+        height: 150px;
+        width: 100%;
+        content: '';
+        display: block;
+        clear: both;
+      "
+    ></div>
+  </body>
+</html>
