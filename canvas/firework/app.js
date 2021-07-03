@@ -53,9 +53,9 @@ class Particle {
 
     this.velocity.x *= 0.99
     this.velocity.y *= 0.99
-    this.velocity.y += 0.05
+    this.velocity.y += 0.03
 
-    this.alpha -= 0.005
+    this.alpha -= 0.01
   }
 }
 
@@ -69,7 +69,7 @@ const init = () => {
 
 const animate = () => {
   requestAnimationFrame(animate);
-  c.fillStyle = 'rgba(0, 0, 0, 0.2)'
+  c.fillStyle = 'rgba(0, 0, 0, 0.05)'
   c.fillRect(0, 0, canvas.width, canvas.height);
   particles.forEach((particle, i) => {
     if (particle.alpha > 0) {
@@ -88,13 +88,13 @@ const listen = () => {
     mouse.x = e.clientX;
     mouse.y = e.clientY;
 
-    const particleCount = 400
+    const particleCount = 500
     const angleIncrement = ( Math.PI * 2 ) / particleCount
     for (let i = 0; i < particleCount; i++) {
       particles.push(
         new Particle(mouse.x, mouse.y, 3, colorSet[i %  colorSet.length], {
-          x: Math.cos(angleIncrement * i) * Math.random() * 8,
-          y: Math.sin(angleIncrement * i) * Math.random() * 8,
+          x: Math.cos(angleIncrement * i) * Math.random() * 10,
+          y: Math.sin(angleIncrement * i) * Math.random() * 10
         })
       );
     }
