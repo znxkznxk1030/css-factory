@@ -31,20 +31,20 @@ addEventListener("resize", () => {
   init();
 });
 
-// Objects
-class Circle {
+// Particle
+class Particle {
   constructor(x, y, radius, color) {
     this.x = x;
     this.y = y;
     this.radius = radius;
     this.color = color;
   }
-  
+
   draw() {
     c.beginPath();
     c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-    c.fillStyle = this.color;
-    c.fill();
+    c.strokeStyle = this.color;
+    c.stroke();
     c.closePath();
   }
 
@@ -54,11 +54,30 @@ class Circle {
 }
 
 // Implementation
-let circle1 = null;
-let circle2 = null;
+let particles;
 function init() {
-  circle1 = new Circle(canvas.width / 2, canvas.height / 2, 100, 'black');
-  circle2 = new Circle(undefined, undefined, 30, 'red');
+  particles = [];
+
+  for (let i = 0; i < 400; i++) {
+    const radius = 10;
+    let x = randomIntFromRange(radius, innerWidth - radius);
+    let y = randomIntFromRange(radius, innerHeight - radius);
+    const color = 'blue';
+
+    if ( i !== 0 ) {
+      for (let j = 0; j < particles.length; j++) {
+        const particle = particles[j];
+
+        if (distance(x,y,particle.x, particle.y) - radius * 2 < 0) {
+          x = randomIntFromRange(radius, innerWidth - radius);
+          y = randomIntFromRange(radius, innerHeight - radius);
+
+          j = - 1
+        }
+      }
+    }
+    particles.push(new Particle(x, y, radius, color));
+  }
 }
 
 // Animation Loop
@@ -66,20 +85,9 @@ function animate() {
   requestAnimationFrame(animate);
   c.clearRect(0, 0, canvas.width, canvas.height);
 
-  circle2.x = mouse.x;
-  circle2.y = mouse.y;
-
-  if (distance(circle1.x, circle1.y, circle2.x, circle2.y) < circle1.radius + circle2.radius) {
-    circle1.color = 'red'
-  } else {
-    circle1.color = 'black'
-  }
-
-  circle1.update();
-  circle2.update();
-  // objects.forEach(object => {
-  //  object.update()
-  // })
+  particles.forEach((particle) => {
+    particle.update();
+  });
 }
 
 init();
