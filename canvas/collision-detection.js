@@ -5,8 +5,8 @@
  * Learn more https://chriscourses.com/
  */
 
-const canvas = document.querySelector("canvas");
-const c = canvas.getContext("2d");
+const canvas = document.querySelector('canvas');
+const c = canvas.getContext('2d');
 
 canvas.width = innerWidth;
 canvas.height = innerHeight;
@@ -16,15 +16,15 @@ const mouse = {
   y: innerHeight / 2,
 };
 
-const colors = ["#2185C5", "#7ECEFD", "#FFF6E5", "#FF7F66"];
+const colors = ['#2185C5', '#7ECEFD', '#FFF6E5', '#FF7F66'];
 
 // Event Listeners
-addEventListener("mousemove", (event) => {
+addEventListener('mousemove', (event) => {
   mouse.x = event.clientX;
   mouse.y = event.clientY;
 });
 
-addEventListener("resize", () => {
+addEventListener('resize', () => {
   canvas.width = innerWidth;
   canvas.height = innerHeight;
 
@@ -39,7 +39,7 @@ class Circle {
     this.radius = radius;
     this.color = color;
   }
-  
+
   draw() {
     c.beginPath();
     c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
@@ -69,10 +69,13 @@ function animate() {
   circle2.x = mouse.x;
   circle2.y = mouse.y;
 
-  if (distance(circle1.x, circle1.y, circle2.x, circle2.y) < circle1.radius + circle2.radius) {
-    circle1.color = 'red'
+  if (
+    distance(circle1.x, circle1.y, circle2.x, circle2.y) <
+    circle1.radius + circle2.radius
+  ) {
+    circle1.color = 'red';
   } else {
-    circle1.color = 'black'
+    circle1.color = 'black';
   }
 
   circle1.update();
@@ -90,7 +93,7 @@ animate();
  *  @function randomIntFromRange Picks a random integer within a range
  *  @function randomColor Picks a random color
  *  @function dispatch Find the distance between two points
- **/ 
+ **/
 
 function randomIntFromRange(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);

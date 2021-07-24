@@ -56,21 +56,21 @@ const animate = () => {
   // console.log(c);
   // c.clearRect(0, 0, c.width, c.height);
   // console.log('animate ... ')
-  particles.forEach(particle => {
+  particles.forEach((particle) => {
     particle.update();
-  })
+  });
 };
 
 addEventListener('click', (e) => {
   mouse.x = e.clientX;
   mouse.y = e.clientY;
-  console.log(mouse)
+  console.log(mouse);
 
-    c.beginPath();
-    c.arc(200, 200, 10, 0, Math.PI * 2, false);
-    c.fillStyle = '#fff';
-    c.fill();
-    c.closePath();
+  c.beginPath();
+  c.arc(200, 200, 10, 0, Math.PI * 2, false);
+  c.fillStyle = '#fff';
+  c.fill();
+  c.closePath();
 
   for (let i = 0; i < 400; i++) {
     particles.push(new Particle(mouse.x, mouse.y, 5, 'blue'));

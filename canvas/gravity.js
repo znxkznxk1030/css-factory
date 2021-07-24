@@ -5,8 +5,8 @@
  * Learn more https://chriscourses.com/
  */
 
-const canvas = document.querySelector("canvas");
-const c = canvas.getContext("2d");
+const canvas = document.querySelector('canvas');
+const c = canvas.getContext('2d');
 
 canvas.width = innerWidth;
 canvas.height = innerHeight;
@@ -16,18 +16,18 @@ const mouse = {
   y: innerHeight / 2,
 };
 
-const colors = ["#2185C5", "#7ECEFD", "#FFF6E5", "#FF7F66"];
+const colors = ['#2185C5', '#7ECEFD', '#FFF6E5', '#FF7F66'];
 
 let gravity = 1;
 let friction = 0.94;
 
 // Event Listeners
-addEventListener("mousemove", (event) => {
+addEventListener('mousemove', (event) => {
   mouse.x = event.clientX;
   mouse.y = event.clientY;
 });
 
-addEventListener("resize", () => {
+addEventListener('resize', () => {
   canvas.width = innerWidth;
   canvas.height = innerHeight;
 
@@ -59,7 +59,10 @@ class Ball {
   }
 
   update() {
-    if (this.x + this.radius + this.dx > canvas.width || this.x - this.radius < 0) {
+    if (
+      this.x + this.radius + this.dx > canvas.width ||
+      this.x - this.radius < 0
+    ) {
       this.dx = -this.dx;
     }
     this.x += this.dx;
@@ -71,7 +74,6 @@ class Ball {
     }
     this.y += this.dy;
 
-    
     this.draw();
   }
 }
@@ -83,7 +85,7 @@ let arrayLength = 50;
 function init() {
   ballArray = [];
   for (let i = 0; i < arrayLength; i++) {
-    let radius = randomIntFromRange( 8, 30);
+    let radius = randomIntFromRange(8, 30);
     let x = randomIntFromRange(radius, canvas.width - radius);
     let y = randomIntFromRange(0, canvas.height - radius);
     let dx = randomIntFromRange(-2, 2);
@@ -110,7 +112,7 @@ animate();
  *  @function randomIntFromRange Picks a random integer within a range
  *  @function randomColor Picks a random color
  *  @function dispatch Find the distance between two points
- **/ 
+ **/
 
 function randomIntFromRange(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
