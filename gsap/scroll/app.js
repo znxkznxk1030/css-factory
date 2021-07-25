@@ -6,7 +6,7 @@ gsap.to(".square", {
   scrollTrigger: {
     trigger: ".square",
     start: "top center",
-    end: "center 20%",
+    end: () => `+=${document.querySelector(".square").offsetHeight}`,
     markers: true,
     toggleClass: "red"
   }
