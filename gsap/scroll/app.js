@@ -7,7 +7,11 @@ gsap.to(".square", {
     trigger: ".square",
     start: "top center",
     end: () => `+=${document.querySelector(".square").offsetHeight}`,
-    markers: true,
+    markers: {
+      startColor: "purple",
+      endColor: "fuchsia",
+      fontSize: "3rem"
+    },
     toggleClass: "red"
   }
 })
