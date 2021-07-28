@@ -1,14 +1,14 @@
 gsap.registerPlugin(ScrollTrigger);
 
 gsap.to(".square", {
-  // x: 600,
+  x: 600,
   duration: 3,
   scrollTrigger: {
     trigger: ".square",
     start: "top 80%",
     end: "top 30%",
     scrub: 8,
-    pin: ".square2",
+    pin: ".square",
     toggleActions: "restart none none none",
     //              onEnter   onLeave   onEnterBack   onLeaveBack
     markers: {
