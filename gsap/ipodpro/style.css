@@ -4,6 +4,7 @@ html, body {
   outline: 0;
   width: 100%;
   height: 100%;
+  /* color:aliceblue; */
 }
 
 * {
@@ -11,19 +12,20 @@ html, body {
 }
 
 body {
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
   font-family: sans-serif;
 }
 
 .intro {
   height: 100vh;
   width: 100vw;
+  /* background-color: black; */
 }
 
 .intro video {
   height: 100%;
   width: 100%;
-  background-color: black;
+  /* background-color: black; */
   object-fit: cover;
 }
 
