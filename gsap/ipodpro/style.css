@@ -16,6 +16,10 @@ body {
   font-family: sans-serif;
 }
 
+.container {
+  height: 300vh;
+  width: 100vw;
+}
 .intro {
   height: 100vh;
   width: 100vw;
@@ -23,8 +27,8 @@ body {
 }
 
 .intro video {
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   /* background-color: black; */
   object-fit: cover;
 }
@@ -35,4 +39,6 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 80px;
+  color: black;
+  z-index:100;
 }
