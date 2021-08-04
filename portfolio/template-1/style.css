@@ -36,7 +36,7 @@
 
 :root {
   --z-back: -10;
-  --z-nomal: 1;
+  --z-normal: 1;
   --z-tooltip: 10;
   --z-fixed: 100;
 }
