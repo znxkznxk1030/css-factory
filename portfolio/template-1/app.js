@@ -1,0 +1,2 @@
+let isMenuOpen = false;
+
