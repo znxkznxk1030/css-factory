@@ -161,14 +161,10 @@ img{
 
 .nav__link {
   color: #fff;
-  /* position: relative; */
-}
-
-.nav__link:hover {
   position: relative;
 }
 
-.nav__link:hover::after {
+.active::after {
   position: absolute;
   content: '';
   width: 100%;
