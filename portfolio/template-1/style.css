@@ -109,7 +109,7 @@ img{
 
 /* ====== LAYOUT ====== */
 .l-header {
-  width: 100%;
+  width: 100vw;
   position: fixed;
   top: 0;
   left: 0;
@@ -141,11 +141,13 @@ img{
   .nav__menu {
     position: fixed;
     top: var(--header-height);
-    right: -100%;
+    right: 0;
     width: 80%;
     height: 100%;
     padding: 2rem;
     background-color: var(--second-color);
+    transform: translateX(100%);
+    transition: transform .3s ease-out;
   }
 }
 
@@ -177,6 +179,8 @@ img{
 }
 
 .nav__show {
-  right: 0;
+  /* right: 0; */
+  transform: translateX(0);
+  transition: transform .3s ease-in;
 }
 
