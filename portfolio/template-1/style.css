@@ -7,7 +7,7 @@
 
 /* ====== COLOR ====== */
 :root {
-  --first-color: #4070f4;
+  --first-color: #50CB93;
   --second-color: #0e2431;
 }
 
@@ -111,6 +111,7 @@ section {
   padding-top: 3rem;
   padding-bottom: 2rem;
   position: relative;
+  height: 100vh;
 }
 
 
