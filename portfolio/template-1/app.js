@@ -13,7 +13,7 @@ const removeActiveClass = () => {
   listNavLink.forEach((elNavLink) => {
     elNavLink.classList.remove('active');
   });
-}
+};
 
 listNavLink.forEach((elNavLink) => {
   elNavLink.addEventListener('click', () => {

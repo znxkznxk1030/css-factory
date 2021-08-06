@@ -7,8 +7,8 @@
  * Learn more https://chriscourses.com/
  */
 
-const canvas = document.querySelector("canvas");
-const c = canvas.getContext("2d");
+const canvas = document.querySelector('canvas');
+const c = canvas.getContext('2d');
 
 canvas.width = innerWidth;
 canvas.height = innerHeight;
@@ -18,25 +18,25 @@ const mouse = {
   y: innerHeight / 2,
 };
 
-const colors = ["#2185C5", "#7ECEFD", "#FFF6E5", "#FF7F66"];
+const colors = ['#2185C5', '#7ECEFD', '#FFF6E5', '#FF7F66'];
 
 let gravity = 1;
 let friction = 0.94;
 
 // Event Listeners
-addEventListener("mousemove", (event) => {
+addEventListener('mousemove', (event) => {
   mouse.x = event.clientX;
   mouse.y = event.clientY;
 });
 
-addEventListener("resize", () => {
+addEventListener('resize', () => {
   canvas.width = innerWidth;
   canvas.height = innerHeight;
 
   init();
 });
 
-addEventListener("click", () => {
+addEventListener('click', () => {
   init();
 });
 

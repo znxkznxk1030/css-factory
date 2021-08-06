@@ -22,10 +22,8 @@ gsap.to('.container', {
 
 video.currentTime = 0;
 
-
 setInterval(() => {
-  console.log(progress)
+  console.log(progress);
   video.currentTime = video.duration * progress;
   console.log(video.currentTime);
 }, 100);
-
