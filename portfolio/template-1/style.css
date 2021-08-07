@@ -251,3 +251,72 @@ section {
 .button:hover {
   box-shadow: 0 10px 50px rgba(0,0,0,.15);
 }
+
+/* ====== Skills ====== */
+
+.skills {
+  height: calc(100vh - 3rem);
+  margin-left: var(--mb-2);
+  margin-right: var(--mb-2);
+}
+
+.skills__subtitle {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.skills__text {
+  width: 90%;
+  text-align: center;
+  margin: 0 auto 3rem auto;
+}
+
+.skills__data {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+  position: relative;
+  border-radius: .5rem;
+  box-shadow: 5px 5px 10px #00000059;
+  color: #0e2431;
+  margin: 1rem auto;
+}
+
+.skills__names {
+  display: flex;
+  align-items: center;
+}
+
+.skills__percentage {
+  display: flex;
+  align-items: center;
+}
+
+.skills__icon{
+  font-size: 2rem;
+  color: #50CB93;
+  margin-right: .5rem;
+}
+
+.skills__bar {
+  position: absolute;
+  border-radius: .25rem;
+  left: 0;
+  bottom: 0;
+  height: .25rem;
+  width: 80%;
+  background: #50CB93;
+}
+
+.skills__bar--javascript {
+  width: 90%;
+}
+
+.skills__bar--react {
+  width: 70%;
+}
+
+.skills__bar--spring-boot{
+  width: 60%;
+}
