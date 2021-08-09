@@ -1,3 +1,5 @@
+// ====== HEADER ===== //
+
 let isMenuOpen = false;
 
 const elMenuIcon = document.getElementById('nav-toggle');
@@ -21,3 +23,26 @@ listNavLink.forEach((elNavLink) => {
     elNavLink.classList.add('active');
   });
 });
+
+// ====== HOME ====== //
+gsap.registerPlugin(ScrollTrigger);
+
+const t1 = gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: '.home',
+      start: 'center center',
+      end: 'bottom top',
+      // markers: true,
+      pin: true,
+      scrub: true,
+    },
+  })
+  .addLabel('target-point');
+
+t1.from(
+  '.home__image--sunglasses',
+  { opacity: 0, top: '-150px' },
+  'target-point'
+);
+t1.from('.home__image--gold', { opacity: 0, left: '-150px' }, 'target-point');
