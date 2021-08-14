@@ -34,16 +34,28 @@ imgObj.onload = function () {
 };
 imgObj.crossOrigin = 'Anonymous';
 imgObj.src = unsplasImg;
-// imgObj.crossOrigin = 'Anonymous';
-// imgObj.setAttribute('crossOrigin', '');
+
+let origin = null;
 
 const greyscale = function (ev) {
   let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-  let arr = imgData.data;
 
-  console.log(arr);
+  if (origin != null) {
+    console.log('origin: ', origin);
+    imgData.data.set(origin);
+    origin = null;
+
+    ctx.putImageData(imgData, 0, 0);
+    return;
+  }
+
+  origin = imgData.data.slice();
+  let arr = imgData.data.slice();
+
+  console.log(imgData.data);
+  console.log(Array.isArray(imgData.data));
+  console.log(typeof imgData.data);
   for (let i = 0; i < arr.length; i += 4) {
-    const element = arr[i];
     const ttl = arr[i] + arr[i + 1] + arr[i + 2];
     const avg = ttl / 3;
 
@@ -51,7 +63,9 @@ const greyscale = function (ev) {
     arr[i + 1] = avg;   //  green
     arr[i + 2] = avg;   //  blue
   }
+  imgData.data.set(arr);
   // imgData.data = arr;
+  // imgData.data
   ctx.putImageData(imgData, 0, 0);
 
 }
