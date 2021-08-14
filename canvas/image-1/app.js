@@ -5,6 +5,9 @@
  * Learn more https://chriscourses.com/
  */
 
+const unsplasImg =
+  'https://images.unsplash.com/photo-1623435243235-ec41e6c986ab?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyODk1NzAyMw&ixlib=rb-1.2.1&q=85';
+
 const canvas = document.querySelector("canvas");
 const ctx= canvas.getContext("2d");
 
@@ -20,16 +23,38 @@ imgObj.onload = function () {
 
   let aspect = nw/nh;
   let h = w / aspect;
+  console.log(h);
   canvas.height = h;
 
-  ctx.drawImage(imgObj, 0, 0, 300, h);
+  ctx.drawImage(imgObj, 0, 0, w, h);
+
+  canvas.addEventListener("click", greyscale);
+
+  // ctx.drawImage(imgObj, 500, 1000, 200, 200 / aspect, 0, 0, 300, h);
 };
+imgObj.crossOrigin = 'Anonymous';
+imgObj.src = unsplasImg;
+// imgObj.crossOrigin = 'Anonymous';
+// imgObj.setAttribute('crossOrigin', '');
 
-imgObj.src = "./splash-1.jpeg";
+const greyscale = function (ev) {
+  let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  let arr = imgData.data;
 
-const greyscale = function (ev) {}
+  console.log(arr);
+  for (let i = 0; i < arr.length; i += 4) {
+    const element = arr[i];
+    const ttl = arr[i] + arr[i + 1] + arr[i + 2];
+    const avg = ttl / 3;
 
+    arr[i] = avg;       //  red
+    arr[i + 1] = avg;   //  green
+    arr[i + 2] = avg;   //  blue
+  }
+  // imgData.data = arr;
+  ctx.putImageData(imgData, 0, 0);
 
+}
 
 
 
