@@ -95,6 +95,11 @@ const colorChannel = function (ev) {
   // imgData.data = arr;
   // imgData.data
   ctx.putImageData(imgData, 0, 0);
+
+  console.log(document.getElementById('canvas'));
+
+  let img = canvas.toDataURL('image/jpeg', 1.0);
+  document.querySelector('img').src = img;
 };
 
 /**
