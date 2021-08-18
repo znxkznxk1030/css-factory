@@ -67,7 +67,7 @@ class Polygon {
       c.save();
       c.translate(x, y);
       c.fillStyle = colors[index];
-      // c.rotate()
+      c.rotate( ( ( 360 / this.sides ) * index + 45 ) * ( Math.PI / 180 ) );
       c.beginPath();
       const sides2 = 4;
       const angle2 = PI2 / sides2;
