@@ -51,7 +51,7 @@ class Polygon {
 
     c.translate(this.x, this.y);
     const k = - 0.01;
-    // c.rotate(k * mouse.x);
+    c.rotate(k * mouse.x);
     const angle = PI2 / this.sides;
 
     for (let index = 0; index < this.sides; index++) {
@@ -66,14 +66,14 @@ class Polygon {
       // c.closePath();
       c.save();
       c.translate(x, y);
-      c.fillStyle = colors[index];
+      c.fillStyle = "#000";
       c.rotate( ( ( 360 / this.sides ) * index + 45 ) * ( Math.PI / 180 ) );
       c.beginPath();
       const sides2 = 4;
       const angle2 = PI2 / sides2;
       for (let j = 0; j < sides2; j++) {
-        const x2 = 80 * Math.cos(angle2 * j);
-        const y2 = 80 * Math.sin(angle2 * j);
+        const x2 = 50 * Math.cos(angle2 * j);
+        const y2 = 50 * Math.sin(angle2 * j);
 
         j === 0? c.moveTo(x2, y2): c.lineTo(x2, y2);
 
@@ -101,7 +101,7 @@ function init() {
     canvas.width / 2,
     canvas.height / 2,
     canvas.height / 3,
-    5
+    10
   );
 }
 

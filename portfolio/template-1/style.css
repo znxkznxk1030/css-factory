@@ -42,6 +42,7 @@
   --z-back: -10;
   --z-normal: 1;
   --z-tooltip: 10;
+  --z-canvas: 0;
   --z-fixed: 100;
 }
 
@@ -277,6 +278,17 @@ section {
 
 .button:hover {
   box-shadow: 0 10px 50px rgba(0,0,0,.15);
+}
+
+.canvas--home-wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 105%;
+  z-index: var(--z-back);
 }
 
 /* ====== Skills ====== */

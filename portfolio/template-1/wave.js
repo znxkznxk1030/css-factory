@@ -1,74 +1,4 @@
-// ====== HEADER ===== //
-
-// import { wave } from "./wave";
-
-let isMenuOpen = false;
-
-const elMenuIcon = document.getElementById('nav-toggle');
-const elNavMenu = document.getElementById('nav-menu');
-
-elMenuIcon.addEventListener('click', () => {
-  elNavMenu.classList.toggle('nav__show');
-});
-
-const listNavLink = document.querySelectorAll('.nav__link');
-
-const removeActiveClass = () => {
-  listNavLink.forEach((elNavLink) => {
-    elNavLink.classList.remove('active');
-  });
-};
-
-listNavLink.forEach((elNavLink) => {
-  elNavLink.addEventListener('click', () => {
-    removeActiveClass();
-    elNavLink.classList.add('active');
-  });
-});
-
-// ====== HOME ====== //
-gsap.registerPlugin(ScrollTrigger);
-
-let progress = 0;
-
-const t1 = gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: '.home',
-      start: 'center center',
-      end: 'bottom top',
-      // markers: true,
-      onUpdate: (self) => {
-        // console.log(self);
-        progress = self.progress;
-      },
-      pin: true,
-      scrub: true,
-    },
-  })
-  .addLabel('target-point');
-
-t1.from(
-  '.home__image--sunglasses',
-  { opacity: 0, top: '-150px' },
-  'target-point'
-);
-t1.from('.home__image--gold', { opacity: 0, left: '-150px' }, 'target-point');
-
-// css로 처리할 수 없는 에니메이션 처리
-setInterval(() => {
-  // console.log(progress);
-  if (wave != null) {
-    referHeight = innerHeight - (innerHeight * progress);
-  }
-}, 100);
-
-
-
-
 /*!
- * Wave Animation - Arthur Kim
- *
  * Created by Canvas Dojo <https://github.com/znxkznxk1030/canvas-dojo>
  *
  * canvas-boilerplate by <https://github.com/christopher4lis/canvas-boilerplate>
@@ -81,6 +11,8 @@ const ctx = canvas.getContext('2d');
 canvas.width = innerWidth;
 canvas.height = innerHeight;
 
+const colors = ['#2185C5', '#7ECEFD', '#FFF6E5', '#FF7F66'];
+
 // Event Listeners
 addEventListener('resize', () => {
   canvas.width = innerWidth;
@@ -91,12 +23,11 @@ addEventListener('resize', () => {
 });
 
 // Objects
-let referHeight = innerHeight * 0.9;
 class Point {
-  constructor(x, weight) {
+  constructor(x, y, weight) {
     this.x = x;
-    this.y = referHeight;
-    this.originY = referHeight;
+    this.y = y;
+    this.originY = y;
     this.weight = weight;
 
     this.speed = 0.05;
@@ -105,14 +36,16 @@ class Point {
 
   update() {
     this.weight += this.speed + Math.random() * 0.05;
-    this.y = referHeight + Math.sin(this.weight) * this.max;
+    this.y = this.originY + Math.sin(this.weight) * this.max;
   }
 }
 
 class Wave {
   constructor() {
-    this.numPoints = 7;
+    this.numPoints = 6;
     this.gap = innerWidth / (this.numPoints - 1);
+
+    this.height = innerHeight - 50;
     this.init();
   }
 
@@ -120,10 +53,9 @@ class Wave {
     this.points = [];
 
     for (let index = 0; index < this.numPoints; index++) {
-      const point = new Point(this.gap * index, index);
+      const point = new Point(this.gap * index, this.height, index);
       this.points.push(point);
     }
-    console.log(this.points);
   }
 
   resizeHeight(height) {
@@ -170,7 +102,7 @@ class Wave {
 }
 
 // Implementation
-let wave = null;
+var wave = null;
 function init() {
   wave = new Wave();
 }
@@ -182,5 +114,4 @@ function animate() {
   wave.draw();
 }
 
-init();
-animate();
+// export { wave };
