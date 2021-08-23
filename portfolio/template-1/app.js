@@ -48,12 +48,8 @@ const t1 = gsap
   })
   .addLabel('target-point');
 
-t1.from(
-  '.home__image--sunglasses',
-  { opacity: 0, top: '-150px' },
-  'target-point'
-);
-t1.from('.home__image--gold', { opacity: 0, left: '-150px' }, 'target-point');
+t1.from('.home__image--snorkel', { opacity: 0, top: '-120px' }, 'target-point');
+// t1.from('.home__image--gold', { opacity: 0, left: '-150px' }, 'target-point');
 
 // css로 처리할 수 없는 에니메이션 처리
 setInterval(() => {

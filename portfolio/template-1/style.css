@@ -249,11 +249,11 @@ section {
   width: var(--home-image-size);
 }
 
-.home__image--sunglasses {
+.home__image--snorkel {
   position: absolute;
   width: 95px;
   left: 93px;
-  top: 74px;
+  top: 50px;
   transform: rotate(-3deg);
 }
 
