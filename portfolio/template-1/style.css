@@ -201,6 +201,7 @@ section {
   row-gap: 1rem;
 }
 
+
 .home__data {
   align-self: center;
   margin-left: var(--mb-5);
@@ -211,6 +212,23 @@ section {
   font-size: var(--big-font-size);
   margin-bottom: var(--mb-5);
 }
+
+.home__name {
+  /* content: "Cool Fun Sexy"; */
+  color: #fff;
+  left: 2em;
+}
+
+.home__bubble-container {
+  position: absolute;
+  width: 150px;
+  height: 650px;
+  /* background: red; */
+  right: 52px;
+  top: -600px;
+}
+
+
 
 .home__title--color {
   color: var(--first-color);
