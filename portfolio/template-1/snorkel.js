@@ -24,7 +24,7 @@
       this.y = y;
       this.radius = radius;
       this.color = color;
-      this.dy = Math.random() * 10 + 1;
+      this.dy = Math.random() * 3 + 1;
     }
 
     draw() {
