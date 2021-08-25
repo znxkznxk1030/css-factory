@@ -54,10 +54,11 @@ t1.to('.home__title--A', { color: "#fff" });
 // t1.from('.home__image--gold', { opacity: 0, left: '-150px' }, 'target-point');
 
 // css로 처리할 수 없는 에니메이션 처리
+const heightPadding = 200;
 setInterval(() => {
   // console.log(progress);
   if (wave != null) {
-    referHeight = innerHeight - (innerHeight * progress);
+    referHeight = innerHeight - (innerHeight * progress) - heightPadding;
   }
 }, 100);
 

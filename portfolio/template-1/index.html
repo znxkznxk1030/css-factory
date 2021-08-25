@@ -39,59 +39,51 @@
       <section class="home">
         <div class="home__data">
           <h1 class="home__title">
-            Hi,
-            <br />I'm <span class="home__title--color home__title--A">A</span><span class="home__title--color">rthur Kim</span>
-            <br /> <span class="home__name">Cool Fun Sexy</span>
-            <br /> <span class="home__title--color">A Front
-            End</span> Developer
+            Hello World!
+            <br />I'm <span class="home__title--color home__title--A">A</span
+            ><span class="home__title--color">rthur Kim</span> <br />
+            <span class="home__name">Fun Cool Sexy</span> <br />
+            <span class="home__title--color">A Front End</span> Developer
           </h1>
           <a href="#" class="button">Contact</a>
+          <div class="home__image">
+            <img src="img/snorkel-cartoon.png" class="home__image--snorkel" />
+            <canvas class="home__bubble-container" id="snorkel-bubble"></canvas>
+            <svg
+              viewBox="50 50 400 400"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              id="blobSvg"
+              class="home__image--blob"
+              preserveAspectRatio="xMinYMin"
+            >
+              <defs>
+                <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop
+                    offset="0%"
+                    style="stop-color: rgb(194, 229, 156)"
+                  ></stop>
+                  <stop
+                    offset="100%"
+                    style="stop-color: rgb(100, 179, 244)"
+                  ></stop>
+                </linearGradient>
+              </defs>
+              <path
+                id="blob"
+                d="M410,326Q372,402,287.5,428Q203,454,148,389.5Q93,325,72,239.5Q51,154,128.5,105.5Q206,57,288.5,77.5Q371,98,409.5,174Q448,250,410,326Z"
+                fill="url(#gradient)"
+              ></path>
+              <image
+                href="./img/about-4.png"
+                class="about-img"
+                x="103"
+                y="110"
+              ></image>
+            </svg>
+          </div>
         </div>
-        <!-- <div class="home__social">
-          <a href="#" class="home__social--icon"
-            ><i class="bx bxl-github"></i
-          ></a>
-          <a href="#" class="home__social--icon"
-            ><i class="bx bxl-codepen"></i
-          ></a>
-          <a href="#" class="home__social--icon"
-            ><i class="bx bxl-instagram"></i
-          ></a>
-        </div> -->
-        <div class="home__image">
-          <img src="img/snorkel-cartoon.png" class="home__image--snorkel" />
-          <canvas class="home__bubble-container" id="snorkel-bubble"></canvas>
-          <svg
-            viewBox="50 50 400 400"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="blobSvg"
-            class="home__image--blob"
-            preserveAspectRatio="xMinYMin"
-          >
-            <defs>
-              <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" style="stop-color: rgb(194, 229, 156)"></stop>
-                <stop
-                  offset="100%"
-                  style="stop-color: rgb(100, 179, 244)"
-                ></stop>
-              </linearGradient>
-            </defs>
-            <path
-              id="blob"
-              d="M410,326Q372,402,287.5,428Q203,454,148,389.5Q93,325,72,239.5Q51,154,128.5,105.5Q206,57,288.5,77.5Q371,98,409.5,174Q448,250,410,326Z"
-              fill="url(#gradient)"
-            ></path>
-            <image
-              href="./img/about-4.png"
-              class="about-img"
-              x="103"
-              y="110"
-            ></image>
-          </svg>
-        </div>
-        <canvas class="canvas--home-wave" id="canvas_home" ></canvas>
+        <canvas class="canvas--home-wave" id="canvas_home"></canvas>
       </section>
       <!-- <section class="about">
         <h2 class="section-title">About</h2>
