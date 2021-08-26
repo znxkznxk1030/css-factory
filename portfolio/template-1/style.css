@@ -381,12 +381,16 @@ section {
 
   .home__data {
     position: relative;
-    width: 900px;
+    /* width: 900px; */
+  }
+
+  .home__title {
+    font-size: 4.5rem;
   }
 
   .home__image {
-    top: 0;
-    right: -8rem;
+    top: 1rem;
+    right: -4rem;
   }
   
 }
@@ -458,6 +462,12 @@ section {
 
 .skills__bar--spring-boot{
   width: 60%;
+}
+
+@media screen and (min-width: 901px) {
+  .skills__data  {
+    max-width: 550px;
+  }
 }
 
 /* ====== Footer ====== */
