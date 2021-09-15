@@ -15,14 +15,13 @@ canvas.style.background = '#000';
 const mouse = {
   x: innerWidth / 2,
   y: innerHeight / 2,
-  radius: 150,
+  radius: 70,
 };
 
 // Event Listeners
 addEventListener('mousemove', (event) => {
   mouse.x = event.clientX;
   mouse.y = event.clientY;
-  mouse.radius = 150;
 });
 
 addEventListener('resize', () => {
@@ -34,17 +33,17 @@ addEventListener('resize', () => {
 
 ctx.fillStyle = 'white';
 ctx.font = '30px Verdana';
-ctx.fillText('A', 0, 30);
+ctx.fillText('Arthur', 0, 30);
 // ctx.strokeStyle = 'white'
 // ctx.strokeRect(0, 0, 100, 100);
-const data = ctx.getImageData(0, 0, 100, 100);
+const textCoordinates = ctx.getImageData(0, 0, 100, 100);
 
 // Objects
 class Particle {
   constructor(x, y) {
     this.x = x;
     this.y = y;
-    this.size = 3;
+    this.size = 2;
     this.baseX = this.x;
     this.baseY = this.y;
     this.density = Math.random() * 30 + 1;
@@ -80,8 +79,8 @@ class Particle {
       }
 
       if (this.y !== this.baseY) {
-        let dx = this.x - this.baseX;
-        this.x -= dx / 10;
+        let dy = this.y - this.baseY;
+        this.y -= dy / 10;
       }
     }
 
@@ -94,10 +93,11 @@ let particleArray = [];
 function init() {
   particleArray = [];
 
-  for (let i = 0; i < 500; i++) {
-    let x = randomIntFromRange(0, innerWidth);
-    let y = randomIntFromRange(0, innerHeight);
-    particleArray.push(new Particle(x, y));
+  for (let y = 0, y2 = textCoordinates.height; y < y2; y++) {
+    for (let x = 0, x2 = textCoordinates.width; x < x2; x++) {
+      if (textCoordinates.data[y * 4 * textCoordinates.width + x * 4 + 3] > 128)
+        particleArray.push(new Particle(x * 6, y * 6));
+    }
   }
 }
 
@@ -108,6 +108,26 @@ function animate() {
 
   particleArray.forEach((particle) => {
     particle.update();
+  });
+
+  connect();
+}
+
+function connect() {
+  particleArray.forEach((a) => {
+    particleArray.forEach((b) => {
+      let distance = getDistance(a.x, a.y, b.x, b.y);
+
+      if (distance < 11) {
+        ctx.strokeStyle = 'white';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(a.x, a.y);
+        ctx.lineTo(b.x, b.y);
+        ctx.stroke();
+        // ctx.closePath();
+      }
+    });
   });
 }
 
