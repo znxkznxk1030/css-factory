@@ -42,3 +42,10 @@ body {
   color: black;
   z-index:100;
 }
+
+#intro__video {
+  width: 100vw;
+  height: auto;
+  /* background: #000; */
+  z-index: 10;
+}
