@@ -15,12 +15,14 @@ canvas.style.background = '#000';
 const mouse = {
   x: innerWidth / 2,
   y: innerHeight / 2,
+  radius: 150,
 };
 
 // Event Listeners
 addEventListener('mousemove', (event) => {
   mouse.x = event.clientX;
   mouse.y = event.clientY;
+  mouse.radius = 150;
 });
 
 addEventListener('resize', () => {
@@ -57,6 +59,32 @@ class Particle {
   }
 
   update() {
+    let distance = getDistance(mouse.x, mouse.y, this.x, this.y);
+
+    let dx = mouse.x - this.x;
+    let dy = mouse.y - this.y;
+    let forceDirectionX = dx / distance;
+    let forceDirectionY = dy / distance;
+    let maxDistance = mouse.radius;
+    let force = (maxDistance - distance) / maxDistance;
+    let directionX = forceDirectionX * force * this.density;
+    let directionY = forceDirectionY * force * this.density;
+
+    if (distance < maxDistance) {
+      this.x -= directionX;
+      this.y -= directionY;
+    } else {
+      if (this.x !== this.baseX) {
+        let dx = this.x - this.baseX;
+        this.x -= dx / 10;
+      }
+
+      if (this.y !== this.baseY) {
+        let dx = this.x - this.baseX;
+        this.x -= dx / 10;
+      }
+    }
+
     this.draw();
   }
 }
@@ -79,7 +107,7 @@ function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   particleArray.forEach((particle) => {
-    particle.draw();
+    particle.update();
   });
 }
 
@@ -101,7 +129,7 @@ function randomColor(colors) {
   return colors[Math.floor(Math.random() * colors.length)];
 }
 
-function distance(x1, y1, x2, y2) {
+function getDistance(x1, y1, x2, y2) {
   const xDist = x2 - x1;
   const yDist = y2 - y1;
 
